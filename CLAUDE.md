@@ -48,6 +48,16 @@ When adding, removing, or reordering slides:
 4. Update `max` on `#slide-scrubber` and `#slider-counter` initial text
 5. Update the slide count in the `_Last synced` line of `SLIDES.md`
 
+## Accessibility Conventions
+
+- Only the title slide's decorative canvas stage has `aria-hidden="true"` (with `role="presentation"`). All other stages expose their content to assistive tech.
+- `.frag` elements get `aria-hidden` toggled in sync with their `visible` class via `syncFragAria()` in `slides.js`. New fragment reveals must call this function.
+- `.step-grid` uses `role="list"` with `role="listitem"` on each `.step-row`. The visual `.step-num` circles are `aria-hidden="true"` (the list role provides numbering).
+- The slide counter (`#slider-counter`) has `aria-live="polite"` so screen readers announce slide changes.
+- Code blocks in stages use `<code class="code-block">`, not `<span>`.
+- `.content:focus-visible` shows an accent-colored outline for keyboard users; `.content:focus` hides the outline for mouse clicks.
+- `prefers-reduced-motion: reduce` disables all transitions and animations.
+
 ## Stage Layout Gotchas
 
 - On desktop (≥720px), `.agenda-table`, `.step-grid`, `.stageCenter`, `.stageCompare`, and `.res-wrap` become `position: absolute; inset: 0` with `overflow-y: auto`. Content that exceeds the viewport height scrolls inside the stage — new items added to the top may be clipped if the total height overflows.

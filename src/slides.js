@@ -16,12 +16,19 @@ function fragsOf(slide) {
   return Array.from(slide.querySelectorAll('.frag'));
 }
 
+function syncFragAria(frag) {
+  frag.setAttribute('aria-hidden', frag.classList.contains('visible') ? 'false' : 'true');
+}
+
 function show(i, revealAll) {
   const next = clamp(i, 0, slides.length - 1);
   slides[idx].classList.remove('active');
   idx = next;
   slides[idx].classList.add('active');
-  fragsOf(slides[idx]).forEach(f => f.classList.toggle('visible', !!revealAll));
+  fragsOf(slides[idx]).forEach(f => {
+    f.classList.toggle('visible', !!revealAll);
+    syncFragAria(f);
+  });
 
   if (counter) counter.textContent = `${idx + 1} / ${slides.length}`;
   if (sliderCounter) sliderCounter.textContent = `${idx + 1} / ${slides.length}`;
@@ -47,6 +54,7 @@ function advance() {
   const hidden = frags.filter(f => !f.classList.contains('visible'));
   if (hidden.length) {
     hidden[0].classList.add('visible');
+    syncFragAria(hidden[0]);
   } else if (idx < slides.length - 1) {
     show(idx + 1);
   }
@@ -57,6 +65,7 @@ function retreat() {
   const shown = frags.filter(f => f.classList.contains('visible'));
   if (shown.length) {
     shown[shown.length - 1].classList.remove('visible');
+    syncFragAria(shown[shown.length - 1]);
   } else if (idx > 0) {
     show(idx - 1, true);
   }
@@ -175,6 +184,9 @@ window.addEventListener('hashchange', () => {
   const m = location.hash.match(/^#(\d+)$/);
   if (m) show(parseInt(m[1], 10) - 1, true);
 });
+
+// Initialize all fragments as hidden from assistive tech
+document.querySelectorAll('.frag').forEach(f => f.setAttribute('aria-hidden', 'true'));
 
 const m = location.hash.match(/^#(\d+)$/);
 show(m ? clamp(parseInt(m[1], 10) - 1, 0, slides.length - 1) : 0, true);
