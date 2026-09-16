@@ -1,6 +1,6 @@
-# SLIDES.md — Vibe-Coding Prototypes
+# SLIDES.md — Vibe Coding II: Building a Prototype
 
-## CAIL Spotlight Workshop #2
+## CUNY AI Lab · Vibe Coding Series
 
 Companion to `index.html`. Keep this file in sync whenever slide titles or text content change.
 
@@ -8,9 +8,9 @@ Companion to `index.html`. Keep this file in sync whenever slide titles or text 
 
 ## Slide 1 — Title
 
-**Label:** CAIL Spotlight Workshop #2
-**Title:** Vibe-Coding Prototypes
-**Date:** Tuesday, March 10, 4:00–5:30 pm
+**Label:** CUNY AI Lab · Vibe Coding Series
+**Title:** Vibe Coding II: Building a Prototype
+**Date:** Tuesday, September 29, 2026, 2:30–4:00 pm
 **Stage:** Chladni Figures artifact (`src/chladni.html`)
 
 * * *
@@ -50,7 +50,7 @@ Part 3 — Prototype + Publish:
 
 **Label:** Refresher
 **Title:** Foundations Review
-**Link:** [Workshop #1 deck](https://cuny-ai-lab.github.io/gen-dev-foundations/#1)
+**Link:** [Vibe Coding I: Foundations deck](https://cuny-ai-lab.github.io/gen-dev-foundations/#1)
 
 **Stage (step-grid, fragments):**
 1. How do **LLMs** generate code?
@@ -350,6 +350,11 @@ Part 3 — Prototype + Publish:
 **Title:** Links & References
 
 **Stage (link list):**
+
+Next Steps:
+- [Vibe Coding III: Bring Your Own Project Clinic](https://cail-workshop-registration.ailab-452.workers.dev/) — Tuesday, October 13 · 2:30–4:00 pm · New Media Lab (Room 7388.01) · Prerequisite: Vibe Coding I & II
+- [Co-Working Sessions](https://ailab.gc.cuny.edu/events/) — Thursday, October 29 · Tuesday, November 17 · Thursday, December 3 · 2:00–4:00 pm
+- [Register](https://cail-workshop-registration.ailab-452.workers.dev/) — Sign up for upcoming CUNY AI Lab workshops and sessions
 
 CAIL:
 - [ailab.gc.cuny.edu](https://ailab.gc.cuny.edu) — CUNY AI Lab main site
