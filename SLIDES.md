@@ -50,7 +50,7 @@ Part 3 — Prototype + Publish:
 
 **Label:** Refresher
 **Title:** Foundations Review
-**Link:** [Vibe Coding I: Foundations deck](https://cuny-ai-lab.github.io/gen-dev-foundations/#1)
+**Link:** [Vibe Coding I: Foundations deck](https://cuny-ai-lab.github.io/fall-2026-vibe-coding-i/#1)
 
 **Stage (step-grid, fragments):**
 1. How do **LLMs** generate code?

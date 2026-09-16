@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A static slide deck for **CAIL Spotlight Workshop #2: Vibe-Coding Prototypes**. No build tools, no bundler, no framework — just vanilla HTML, CSS, and JS served as static files. Deployed via GitHub Pages from the `main` branch at `cuny-ai-lab.github.io/vibe-coding-prototypes`.
+A static slide deck for **CAIL Spotlight Workshop #2: Vibe-Coding Prototypes**. No build tools, no bundler, no framework — just vanilla HTML, CSS, and JS served as static files. Deployed via GitHub Pages from the `main` branch at `cuny-ai-lab.github.io/fall-2026-vibe-coding-ii`.
 
 ## Architecture
 
