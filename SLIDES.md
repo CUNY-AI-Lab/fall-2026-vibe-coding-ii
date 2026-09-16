@@ -28,8 +28,9 @@ Part 0 — Review + Framing (20m):
 - From Chatbots to Agents
 
 Part 1 — Setup (10m):
+- Your CUNY AI Lab API Key
 - Install Homebrew / Node.js
-- Install and launch Gemini CLI
+- Install and launch Pi
 
 Part 2 — Plan + Act:
 - Planning stage
@@ -118,7 +119,7 @@ Part 3 — Prototype + Publish:
 
 **Stage (step-grid, fragments):**
 1. Something has to run the loop: send a prompt → check if it wants a tool → run the tool → feed the result back → repeat
-2. Examples: **Claude Code**, **Cursor**, **Gemini CLI**
+2. Examples: **Claude Code**, **Cursor**, **Pi** (what we'll use today)
 3. That's what people mean when they say "agentic"
 
 * * *
@@ -170,7 +171,20 @@ Part 3 — Prototype + Publish:
 
 * * *
 
-## Slide 13 — Install Homebrew / Node.js
+## Slide 13 — Your CUNY AI Lab API Key (PLACEHOLDER)
+
+**Label:** Coming Soon
+**Title:** Your CUNY AI Lab API Key
+
+**Stage (stageCenter):**
+- **Big:** Placeholder: Steve's introduction to the CUNY AI Lab gateway
+- **Hint:** What the gateway is, how to get your personal API key, and how to keep it safe. You'll paste the key during setup on the next slides.
+
+> TODO (Steve): replace this placeholder with the gateway / API key section.
+
+* * *
+
+## Slide 14 — Install Homebrew / Node.js
 
 **Label:** Setup
 **Title:** Install Homebrew / Node.js
@@ -180,37 +194,37 @@ Part 3 — Prototype + Publish:
 - **macOS — Terminal:**
   1. Install Homebrew from brew.sh
   2. Add Homebrew to PATH
-  3. Confirm with `brew --version`
+  3. Install Node.js and confirm (22.19 or newer): `brew install node`, `node --version`
 
 - **Windows — PowerShell:**
-  1. Install Node.js LTS from nodejs.org
-  2. Reopen PowerShell
+  1. Install Node.js (22.19 or newer): `winget install OpenJS.NodeJS.LTS`
+  2. Close PowerShell and open a new window
   3. Confirm with `node --version`
 
 * * *
 
-## Slide 14 — Gemini CLI Setup
+## Slide 15 — Pi Setup
 
 **Label:** Setup
-**Title:** Install and Launch Gemini CLI
+**Title:** Install and Launch Pi
 
 **Stage (step-grid, fragments):**
-1. Install Gemini CLI
-2. Run `gemini`
-3. Complete login
-4. Return to the terminal
-5. Confirm Gemini is ready for prompts
+1. Run the workshop setup: `npx @cuny-ai-lab/pi-workshop` (macOS) / `npx.cmd @cuny-ai-lab/pi-workshop` (Windows)
+2. When LazyPi offers to install Pi and its packages, accept the defaults (install all)
+3. At `CUNY AI Lab API key:` paste your key (your typing stays hidden)
+4. Start Pi with `pi` (`pi.cmd` on Windows)
+5. Type `/model` and choose a CUNY AI Lab model
 
 * * *
 
-## Slide 15 — Section Break
+## Slide 16 — Section Break
 
 **Tag:** Part 2
 **Title:** Plan + Act
 
 * * *
 
-## Slide 16 — Planning Stage
+## Slide 17 — Planning Stage
 
 **Label:** Demo
 **Title:** Planning Stage
@@ -220,18 +234,18 @@ Part 3 — Prototype + Publish:
 
 1. Download and unzip the starter files
 2. `cd` into the unzipped folder from your terminal
-3. Run `gemini` to start the agent
-4. Instruct it to propose a plan and wait for approval: "Propose a plan to reorganize this directory; wait for my approval to implement it."
+3. Run `pi` (`pi.cmd` on Windows) to start the agent
+4. Use `/plan` so Pi investigates read-only and waits for your approval: `/plan Reorganize this directory`
 
 * * *
 
-## Slide 17 — Acting Stage
+## Slide 18 — Acting Stage
 
 **Label:** Demo
 **Title:** Acting Stage
 
 **Stage (stageCenter, fragments):**
-- **Big:** Review and modify the plan where relevant, then instruct the agent to act on it.
+- **Big:** Review the plan, then choose **Approve and execute now**, or **Continue from proposed plan** to adjust it first.
 - One possible result:
   - `index.html`
   - `css/style.css`
@@ -243,7 +257,7 @@ Part 3 — Prototype + Publish:
 
 * * *
 
-## Slide 18 — Open and Test Project
+## Slide 19 — Open and Test Project
 
 **Label:** Demo
 **Title:** Open and Test Project
@@ -253,36 +267,36 @@ Part 3 — Prototype + Publish:
 2. Double-click `index.html` to open in the browser
 3. Try the focus timer. Does it start, pause, and reset?
 4. Check the console for errors (`Cmd+Option+J` / `Ctrl+Shift+J`)
-5. If something's broken, ask Gemini to fix it before moving on
+5. If something's broken, ask Pi to fix it before moving on
 
 * * *
 
-## Slide 19 — Create AGENTS.md
+## Slide 20 — Create AGENTS.md
 
 **Label:** Demo
 **Title:** Create `AGENTS.md`
 
 **Stage (stageCenter, fragments):**
-- **Big:** Use the `/save` command to capture what the agent learned during reorganization:
-- **Prompt:** "/save"
-- Gemini writes an `AGENTS.md` that documents the project for future agentic use: purpose, file structure, and conventions all in one place.
+- **Big:** Ask the agent to capture what it learned during reorganization:
+- **Prompt:** "Create an AGENTS.md that documents this project: its purpose, file structure, and conventions."
+- Pi writes an `AGENTS.md` that documents the project for future agentic use. Pi loads it automatically whenever you start it in this folder.
 
 * * *
 
-## Slide 20 — Section Break
+## Slide 21 — Section Break
 
 **Tag:** Part 3
 **Title:** Prototype + Publish
 
 * * *
 
-## Slide 21 — Customize the Focus Timer
+## Slide 22 — Customize the Focus Timer
 
 **Label:** Demo
 **Title:** Customize the Focus Timer
 
 **Stage (step-grid, fragments):**
-1. Prompt Gemini to add a feature — e.g. session history, sound alerts, or custom intervals
+1. Prompt Pi to add a feature — e.g. session history, sound alerts, or custom intervals
 2. Keep changes in the right files: CSS in `css/`, JS in `js/`
 3. Test locally in the browser
 4. Revise one change at a time
@@ -290,13 +304,13 @@ Part 3 — Prototype + Publish:
 
 * * *
 
-## Slide 22 — Authenticate with GitHub CLI
+## Slide 23 — Authenticate with GitHub CLI
 
 **Label:** Publish
 **Title:** Authenticate with GitHub CLI
 
 **Stage (step-grid, fragments):**
-1. Install GitHub CLI (`brew install gh` on macOS, `npm install -g gh` on Windows)
+1. Install GitHub CLI (`brew install gh` on macOS, `winget install GitHub.cli` on Windows)
 2. Run `gh auth login`
 3. Choose GitHub.com → HTTPS → Login with a web browser
 4. Complete authentication in the browser
@@ -304,7 +318,7 @@ Part 3 — Prototype + Publish:
 
 * * *
 
-## Slide 23 — Create Remote Repository
+## Slide 24 — Create Remote Repository
 
 **Label:** Publish
 **Title:** Create Remote Repository
@@ -316,7 +330,7 @@ Part 3 — Prototype + Publish:
 
 * * *
 
-## Slide 24 — Push to GitHub
+## Slide 25 — Push to GitHub
 
 **Label:** Publish
 **Title:** Push to GitHub
@@ -328,7 +342,7 @@ Part 3 — Prototype + Publish:
 
 * * *
 
-## Slide 25 — Enable GitHub Pages
+## Slide 26 — Enable GitHub Pages
 
 **Label:** Publish
 **Title:** Enable GitHub Pages
@@ -344,7 +358,7 @@ Part 3 — Prototype + Publish:
 
 * * *
 
-## Slide 26 — Resources
+## Slide 27 — Resources
 
 **Label:** Resources
 **Title:** Links & References
@@ -362,11 +376,12 @@ CAIL:
 - [github.com/cuny-ai-lab](https://github.com/cuny-ai-lab) — GitHub workshops and repos
 
 Tools & Docs:
-- [github.com/google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) — Gemini CLI
+- [pi.dev](https://pi.dev) — Pi coding agent
+- [github.com/CUNY-AI-Lab/pi-workshop](https://github.com/CUNY-AI-Lab/pi-workshop) — CUNY AI Lab × Pi setup and troubleshooting
 - [cli.github.com](https://cli.github.com) — GitHub CLI
 - [docs.github.com](https://docs.github.com) — GitHub documentation
 - [agents.md](https://agents.md) — AGENTS.md specification
 
 * * *
 
-_Last synced: 2026-03-09. Deck has 26 slides. Update both this file and `index.html` together._
+_Last synced: 2026-09-16 (Pi setup, API key placeholder slide). Deck has 27 slides. Update both this file and `index.html` together._

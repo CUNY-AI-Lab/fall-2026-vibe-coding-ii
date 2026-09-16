@@ -573,8 +573,9 @@
             <span class="agenda-section-title">Part 1 &mdash; Setup</span>
             <span class="agenda-section-time">10m</span>
           </div>
-          <a class="agenda-item" href="#13"><span class="agenda-item-label">Install Homebrew / Node.js</span></a>
-          <a class="agenda-item" href="#14"><span class="agenda-item-label">Install and Launch Gemini CLI</span></a>
+          <a class="agenda-item" href="#13"><span class="agenda-item-label">Your CUNY AI Lab API Key</span></a>
+          <a class="agenda-item" href="#14"><span class="agenda-item-label">Install Homebrew / Node.js</span></a>
+          <a class="agenda-item" href="#15"><span class="agenda-item-label">Install and Launch Pi</span></a>
         </div>
 
         <div class="agenda-section">
@@ -582,10 +583,10 @@
             <span class="agenda-section-title">Part 2 &mdash; Plan + Act</span>
             <span class="agenda-section-time">30m</span>
           </div>
-          <a class="agenda-item" href="#16"><span class="agenda-item-label">Planning Stage</span></a>
-          <a class="agenda-item" href="#17"><span class="agenda-item-label">Acting Stage</span></a>
-          <a class="agenda-item" href="#18"><span class="agenda-item-label">Open and Test Project</span></a>
-          <a class="agenda-item" href="#19"><span class="agenda-item-label">Create <code>AGENTS.md</code></span></a>
+          <a class="agenda-item" href="#17"><span class="agenda-item-label">Planning Stage</span></a>
+          <a class="agenda-item" href="#18"><span class="agenda-item-label">Acting Stage</span></a>
+          <a class="agenda-item" href="#19"><span class="agenda-item-label">Open and Test Project</span></a>
+          <a class="agenda-item" href="#20"><span class="agenda-item-label">Create <code>AGENTS.md</code></span></a>
         </div>
 
         <div class="agenda-section">
@@ -593,11 +594,11 @@
             <span class="agenda-section-title">Part 3 &mdash; Prototype + Publish</span>
             <span class="agenda-section-time">30m</span>
           </div>
-          <a class="agenda-item" href="#21"><span class="agenda-item-label">Customize the Focus Timer</span></a>
-          <a class="agenda-item" href="#22"><span class="agenda-item-label">Authenticate with GitHub CLI</span></a>
-          <a class="agenda-item" href="#23"><span class="agenda-item-label">Create Remote Repository</span></a>
-          <a class="agenda-item" href="#24"><span class="agenda-item-label">Push to GitHub</span></a>
-          <a class="agenda-item" href="#26"><span class="agenda-item-label">Links &amp; References</span></a>
+          <a class="agenda-item" href="#22"><span class="agenda-item-label">Customize the Focus Timer</span></a>
+          <a class="agenda-item" href="#23"><span class="agenda-item-label">Authenticate with GitHub CLI</span></a>
+          <a class="agenda-item" href="#24"><span class="agenda-item-label">Create Remote Repository</span></a>
+          <a class="agenda-item" href="#25"><span class="agenda-item-label">Push to GitHub</span></a>
+          <a class="agenda-item" href="#27"><span class="agenda-item-label">Links &amp; References</span></a>
         </div>
 
       </div>
@@ -703,7 +704,7 @@
     <div class="stage">
       <div class="step-grid" role="list">
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text">Something has to run the loop: send a prompt &rarr; check if it wants a tool &rarr; run the tool &rarr; feed the result back &rarr; repeat</div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text">Examples: <strong>Claude Code</strong>, <strong>Cursor</strong>, <strong>Gemini CLI</strong></div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text">Examples: <strong>Claude Code</strong>, <strong>Cursor</strong>, <strong>Pi</strong> (what we&rsquo;ll use today)</div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">That&rsquo;s what people mean when they say &ldquo;agentic&rdquo;</div></div>
       </div>
     </div>
@@ -772,7 +773,23 @@
     </div>
   </section>
 
-  <!-- 13 · INSTALL HOMEBREW / NODE.JS -->
+  <!-- 13 · PLACEHOLDER: CUNY AI LAB GATEWAY & API KEY (Steve) -->
+  <section class="slide" data-slide="api-key" aria-label="Your CUNY AI Lab API Key">
+    <div class="content">
+      <div class="label">Coming Soon</div>
+      <h1>Your CUNY AI Lab API Key</h1>
+    </div>
+    <div class="stage">
+      <div class="stageCenter">
+        <div class="stageInner">
+          <div class="stageBig">Placeholder: Steve&rsquo;s introduction to the CUNY AI Lab gateway</div>
+          <div class="stageHint">What the gateway is, how to get your personal API key, and how to keep it safe. You&rsquo;ll paste the key during setup on the next slides.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14 · INSTALL HOMEBREW / NODE.JS -->
 
   <section class="slide" data-slide="brew-setup" aria-label="Install Homebrew or Node.js">
     <div class="content">
@@ -790,16 +807,18 @@
             <code class="code-block">echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' \
   >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"</code>
-            3. Confirm with:
-            <code class="code-block">brew --version</code>
+            3. Install Node.js and confirm (22.19 or newer):
+            <code class="code-block">brew install node
+node --version</code>
           </div>
         </div>
         <div class="col">
           <div class="col-tag">Windows</div>
           <div class="col-title">PowerShell</div>
           <div class="col-sub">
-            1. Install Node.js LTS from <a href="https://nodejs.org/en/download" target="_blank" rel="noopener">nodejs.org</a><br>
-            2. Reopen PowerShell<br>
+            1. Install Node.js (22.19 or newer):
+            <code class="code-block">winget install OpenJS.NodeJS.LTS</code>
+            2. Close PowerShell and open a new window<br>
             3. Confirm with:
             <code class="code-block">node --version</code>
           </div>
@@ -808,25 +827,25 @@ eval "$(/opt/homebrew/bin/brew shellenv)"</code>
     </div>
   </section>
 
-  <!-- 14 · GEMINI CLI SETUP -->
-  <section class="slide" data-slide="gemini-setup" aria-label="Install and Launch Gemini CLI">
+  <!-- 15 · PI SETUP -->
+  <section class="slide" data-slide="pi-setup" aria-label="Install and Launch Pi">
     <div class="content">
       <div class="label">Setup</div>
-      <h1>Install and Launch Gemini CLI</h1>
+      <h1>Install and Launch Pi</h1>
     </div>
     <div class="stage">
       <div class="step-grid" role="list">
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text">Install Gemini CLI<code class="code-block">brew install gemini-cli          # macOS
-npm install -g @google/gemini-cli  # Windows</code></div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text">Run <code>gemini</code> in your terminal</div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">Complete the Google login flow</div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">4</div><div class="step-text">Return to the terminal</div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">5</div><div class="step-text">Confirm Gemini is ready for prompts</div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text">Run the workshop setup<code class="code-block">npx @cuny-ai-lab/pi-workshop      # macOS
+npx.cmd @cuny-ai-lab/pi-workshop  # Windows</code></div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text">When LazyPi offers to install Pi and its packages, accept the defaults (install all)</div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">At <code>CUNY AI Lab API key:</code> paste your key (your typing stays hidden)</div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">4</div><div class="step-text">Start Pi with <code>pi</code> (<code>pi.cmd</code> on Windows)</div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">5</div><div class="step-text">Type <code>/model</code> and choose a CUNY AI Lab model</div></div>
       </div>
     </div>
   </section>
 
-  <!-- 15 · SECTION BREAK: PART 2 -->
+  <!-- 16 · SECTION BREAK: PART 2 -->
   <section class="slide slide-break" data-slide="part2" style="--part:#5a8dee;" aria-label="Part 2 section break">
     <div class="content">
       <div class="break-tag">Part 2</div>
@@ -834,7 +853,7 @@ npm install -g @google/gemini-cli  # Windows</code></div></div>
     </div>
   </section>
 
-  <!-- 16 · PLANNING STAGE -->
+  <!-- 17 · PLANNING STAGE -->
   <section class="slide" data-slide="planning" aria-label="Planning Stage">
     <div class="content">
       <div class="label">Demo</div>
@@ -845,13 +864,13 @@ npm install -g @google/gemini-cli  # Windows</code></div></div>
       <div class="step-grid" role="list">
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text">Download and unzip the starter files</div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text"><code>cd</code> into the unzipped folder from your terminal</div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">Run <code>gemini</code> to start the agent</div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">4</div><div class="step-text">Instruct it to propose a plan and wait for approval:<code class="code-block">&ldquo;Propose a plan to reorganize this directory; wait for my approval to implement it.&rdquo;</code></div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">Run <code>pi</code> (<code>pi.cmd</code> on Windows) to start the agent</div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">4</div><div class="step-text">Use <code>/plan</code> so Pi investigates read-only and waits for your approval:<code class="code-block">/plan Reorganize this directory</code></div></div>
       </div>
     </div>
   </section>
 
-  <!-- 17 · ACTING STAGE -->
+  <!-- 18 · ACTING STAGE -->
   <section class="slide" data-slide="acting" aria-label="Acting Stage">
     <div class="content">
       <div class="label">Demo</div>
@@ -860,7 +879,7 @@ npm install -g @google/gemini-cli  # Windows</code></div></div>
     <div class="stage">
       <div class="stageCenter">
         <div class="stageInner">
-          <div class="stageBig">Review and modify the plan where relevant, then instruct the agent to act on it.</div>
+          <div class="stageBig">Review the plan, then choose <strong>Approve and execute now</strong>, or <strong>Continue from proposed plan</strong> to adjust it first.</div>
           <div class="stageHint frag">One possible result:</div>
           <div class="dir-tree frag">
 <span class="hl">index.html</span>
@@ -879,7 +898,7 @@ assets/
     </div>
   </section>
 
-  <!-- 18 · VERIFY THE REORGANIZED PROJECT -->
+  <!-- 19 · VERIFY THE REORGANIZED PROJECT -->
   <section class="slide" data-slide="verify" aria-label="Open and Test Project">
     <div class="content">
       <div class="label">Demo</div>
@@ -891,12 +910,12 @@ assets/
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text">Double-click <code>index.html</code> to open in the browser</div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">Try the focus timer. Does it start, pause, and reset?</div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">4</div><div class="step-text">Check the console for errors (<code>Cmd+Option+J</code> / <code>Ctrl+Shift+J</code>)</div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">5</div><div class="step-text">If something&rsquo;s broken, ask Gemini to fix it before moving on</div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">5</div><div class="step-text">If something&rsquo;s broken, ask Pi to fix it before moving on</div></div>
       </div>
     </div>
   </section>
 
-  <!-- 19 · CREATE AGENTS.MD -->
+  <!-- 20 · CREATE AGENTS.MD -->
   <section class="slide" data-slide="agents-md" aria-label="Create AGENTS.md">
     <div class="content">
       <div class="label">Demo</div>
@@ -905,15 +924,15 @@ assets/
     <div class="stage">
       <div class="stageCenter">
         <div class="stageInner">
-          <div class="stageBig">Use the <code>/init</code> command to capture what the agent learned during reorganization:</div>
-          <div class="prompt-block frag">&ldquo;/save&rdquo;</div>
-          <div class="stageHint frag">Gemini writes an <code>AGENTS.md</code> that documents the project for future agentic use: purpose, file structure, and conventions all in one place.</div>
+          <div class="stageBig">Ask the agent to capture what it learned during reorganization:</div>
+          <div class="prompt-block frag">&ldquo;Create an AGENTS.md that documents this project: its purpose, file structure, and conventions.&rdquo;</div>
+          <div class="stageHint frag">Pi writes an <code>AGENTS.md</code> that documents the project for future agentic use. Pi loads it automatically whenever you start it in this folder.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 20 · SECTION BREAK: PART 3 -->
+  <!-- 21 · SECTION BREAK: PART 3 -->
   <section class="slide slide-break" data-slide="part3" style="--part:#2ea043;" aria-label="Part 3 section break">
     <div class="content">
       <div class="break-tag">Part 3</div>
@@ -921,7 +940,7 @@ assets/
     </div>
   </section>
 
-  <!-- 21 · CUSTOMIZE THE FOCUS TIMER -->
+  <!-- 22 · CUSTOMIZE THE FOCUS TIMER -->
   <section class="slide" data-slide="build" aria-label="Customize the Focus Timer">
     <div class="content">
       <div class="label">Demo</div>
@@ -929,7 +948,7 @@ assets/
     </div>
     <div class="stage">
       <div class="step-grid" role="list">
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text">Prompt Gemini to add a feature &mdash; e.g. session history, sound alerts, or custom intervals</div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text">Prompt Pi to add a feature &mdash; e.g. session history, sound alerts, or custom intervals</div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text">Keep changes in the right files: CSS in <code>css/</code>, JS in <code>js/</code></div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">Test locally in the browser</div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">4</div><div class="step-text">Revise one change at a time</div></div>
@@ -938,7 +957,7 @@ assets/
     </div>
   </section>
 
-  <!-- 22 · AUTHENTICATE WITH GITHUB CLI -->
+  <!-- 23 · AUTHENTICATE WITH GITHUB CLI -->
   <section class="slide" data-slide="gh-auth" aria-label="Authenticate with GitHub CLI">
     <div class="content">
       <div class="label">Publish</div>
@@ -947,7 +966,7 @@ assets/
     <div class="stage">
       <div class="step-grid" role="list">
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text">Install GitHub CLI<code class="code-block">brew install gh          # macOS
-npm install -g gh        # Windows</code></div></div>
+winget install GitHub.cli  # Windows</code></div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text">Run <code>gh auth login</code></div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">Choose <strong>GitHub.com</strong> &rarr; <strong>HTTPS</strong> &rarr; <strong>Login with a web browser</strong></div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">4</div><div class="step-text">Complete authentication in the browser</div></div>
@@ -956,7 +975,7 @@ npm install -g gh        # Windows</code></div></div>
     </div>
   </section>
 
-  <!-- 23 · CREATE REMOTE REPOSITORY -->
+  <!-- 24 · CREATE REMOTE REPOSITORY -->
   <section class="slide" data-slide="create-repo" aria-label="Create Remote Repository">
     <div class="content">
       <div class="label">Publish</div>
@@ -971,7 +990,7 @@ npm install -g gh        # Windows</code></div></div>
     </div>
   </section>
 
-  <!-- 24 · PUSH TO GITHUB -->
+  <!-- 25 · PUSH TO GITHUB -->
   <section class="slide" data-slide="push" aria-label="Push to GitHub">
     <div class="content">
       <div class="label">Publish</div>
@@ -986,7 +1005,7 @@ npm install -g gh        # Windows</code></div></div>
     </div>
   </section>
 
-  <!-- 25 · ENABLE GITHUB PAGES -->
+  <!-- 26 · ENABLE GITHUB PAGES -->
 
   <section class="slide" data-slide="pages" aria-label="Enable GitHub Pages">
     <div class="content">
@@ -1005,7 +1024,7 @@ npm install -g gh        # Windows</code></div></div>
     </div>
   </section>
 
-  <!-- 26 · RESOURCES -->
+  <!-- 27 · RESOURCES -->
   <section class="slide" data-slide="resources" aria-label="Resources">
     <div class="content">
       <div class="label">Resources</div>
@@ -1058,8 +1077,12 @@ npm install -g gh        # Windows</code></div></div>
           <div class="res-group-title">Tools &amp; Docs</div>
           <ul class="res-list">
             <li>
-              <a href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener">github.com/google-gemini/gemini-cli</a>
-              <div class="res-desc">Gemini CLI</div>
+              <a href="https://pi.dev" target="_blank" rel="noopener">pi.dev</a>
+              <div class="res-desc">Pi coding agent</div>
+            </li>
+            <li>
+              <a href="https://github.com/CUNY-AI-Lab/pi-workshop" target="_blank" rel="noopener">github.com/CUNY-AI-Lab/pi-workshop</a>
+              <div class="res-desc">CUNY AI Lab × Pi setup and troubleshooting</div>
             </li>
             <li>
               <a href="https://cli.github.com" target="_blank" rel="noopener">cli.github.com</a>
@@ -1087,13 +1110,13 @@ npm install -g gh        # Windows</code></div></div>
   <div class="footer-slider">
     <button class="footer-arrow" id="btn-prev" aria-label="Previous slide">&#8592;</button>
     <div class="slider-track">
-      <input type="range" id="slide-scrubber" min="1" max="26" value="1" aria-label="Navigate to slide">
+      <input type="range" id="slide-scrubber" min="1" max="27" value="1" aria-label="Navigate to slide">
       <div class="slider-progress"></div>
       <div class="slider-thumb"></div>
     </div>
     <button class="footer-arrow" id="btn-next" aria-label="Next slide">&#8594;</button>
     <div class="footer-meta">
-      <span id="slider-counter" aria-live="polite" aria-atomic="true">1 / 26</span>
+      <span id="slider-counter" aria-live="polite" aria-atomic="true">1 / 27</span>
       <span class="kbd">Space</span>
     </div>
   </div>
