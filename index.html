@@ -562,7 +562,7 @@
         <div class="agenda-section">
           <div class="agenda-section-head">
             <span class="agenda-section-title">Part 0 &mdash; Review + Framing</span>
-            <span class="agenda-section-time">20m</span>
+            <span class="agenda-section-time">15m</span>
           </div>
           <a class="agenda-item" href="#3"><span class="agenda-item-label">Foundations Review</span></a>
           <a class="agenda-item" href="#4"><span class="agenda-item-label">From Chatbots to Agents</span></a>
@@ -571,17 +571,17 @@
         <div class="agenda-section">
           <div class="agenda-section-head">
             <span class="agenda-section-title">Part 1 &mdash; Setup</span>
-            <span class="agenda-section-time">10m</span>
+            <span class="agenda-section-time">25m</span>
           </div>
-          <a class="agenda-item" href="#13"><span class="agenda-item-label">Your CUNY AI Lab API Key</span></a>
-          <a class="agenda-item" href="#14"><span class="agenda-item-label">Install Homebrew / Node.js</span></a>
+          <a class="agenda-item" href="#13"><span class="agenda-item-label">Your CUNY AI Lab API Key &amp; Quota</span></a>
+          <a class="agenda-item" href="#14"><span class="agenda-item-label">Install Node.js</span></a>
           <a class="agenda-item" href="#15"><span class="agenda-item-label">Install and Launch Pi</span></a>
         </div>
 
         <div class="agenda-section">
           <div class="agenda-section-head">
             <span class="agenda-section-title">Part 2 &mdash; Plan + Act</span>
-            <span class="agenda-section-time">30m</span>
+            <span class="agenda-section-time">25m</span>
           </div>
           <a class="agenda-item" href="#17"><span class="agenda-item-label">Planning Stage</span></a>
           <a class="agenda-item" href="#18"><span class="agenda-item-label">Acting Stage</span></a>
@@ -592,7 +592,7 @@
         <div class="agenda-section">
           <div class="agenda-section-head">
             <span class="agenda-section-title">Part 3 &mdash; Prototype + Publish</span>
-            <span class="agenda-section-time">30m</span>
+            <span class="agenda-section-time">25m</span>
           </div>
           <a class="agenda-item" href="#22"><span class="agenda-item-label">Customize the Focus Timer</span></a>
           <a class="agenda-item" href="#23"><span class="agenda-item-label">Authenticate with GitHub CLI</span></a>
@@ -774,27 +774,27 @@
   </section>
 
   <!-- 13 · PLACEHOLDER: CUNY AI LAB GATEWAY & API KEY (Steve) -->
-  <section class="slide" data-slide="api-key" aria-label="Your CUNY AI Lab API Key">
+  <section class="slide" data-slide="api-key" aria-label="Your CUNY AI Lab API Key and Quota">
     <div class="content">
       <div class="label">Coming Soon</div>
-      <h1>Your CUNY AI Lab API Key</h1>
+      <h1>Your CUNY AI Lab API Key &amp; Quota</h1>
     </div>
     <div class="stage">
       <div class="stageCenter">
         <div class="stageInner">
-          <div class="stageBig">Placeholder: Steve&rsquo;s introduction to the CUNY AI Lab gateway</div>
-          <div class="stageHint">What the gateway is, how to get your personal API key, and how to keep it safe. You&rsquo;ll paste the key during setup on the next slides.</div>
+          <div class="stageBig">Placeholder: Steve&rsquo;s introduction to the CUNY AI Lab gateway, API keys, and quota</div>
+          <div class="stageHint">What the gateway is, how to get your personal API key and keep it safe, and how your quota works so you don&rsquo;t run out before the next workshop. You&rsquo;ll paste the key during setup on the next slides.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 14 · INSTALL HOMEBREW / NODE.JS -->
-
-  <section class="slide" data-slide="brew-setup" aria-label="Install Homebrew or Node.js">
+  <!-- 14 · INSTALL NODE.JS -->
+  <section class="slide" data-slide="node-setup" aria-label="Install Node.js">
     <div class="content">
       <div class="label">Setup</div>
-      <h1>Install Homebrew / Node.js</h1>
+      <h1>Install Node.js</h1>
+      <h2>Pi needs Node.js 22.19 or newer</h2>
     </div>
     <div class="stage">
       <div class="stageCompare">
@@ -802,21 +802,17 @@
           <div class="col-tag">macOS</div>
           <div class="col-title">Terminal</div>
           <div class="col-sub">
-            1. Install Homebrew from <a href="https://brew.sh/" target="_blank" rel="noopener">brew.sh</a><br>
-            2. Add Homebrew to PATH:
-            <code class="code-block">echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' \
-  >> ~/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"</code>
-            3. Install Node.js and confirm (22.19 or newer):
-            <code class="code-block">brew install node
-node --version</code>
+            1. Download and run the installer from <a href="https://nodejs.org/en/download" target="_blank" rel="noopener">nodejs.org</a><br>
+            2. Open a new Terminal window<br>
+            3. Confirm with:
+            <code class="code-block">node --version</code>
           </div>
         </div>
         <div class="col">
           <div class="col-tag">Windows</div>
           <div class="col-title">PowerShell</div>
           <div class="col-sub">
-            1. Install Node.js (22.19 or newer):
+            1. Install Node.js:
             <code class="code-block">winget install OpenJS.NodeJS.LTS</code>
             2. Close PowerShell and open a new window<br>
             3. Confirm with:
@@ -841,6 +837,8 @@ npx.cmd @cuny-ai-lab/pi-workshop  # Windows</code></div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">At <code>CUNY AI Lab API key:</code> paste your key (your typing stays hidden)</div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">4</div><div class="step-text">Start Pi with <code>pi</code> (<code>pi.cmd</code> on Windows)</div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">5</div><div class="step-text">Type <code>/model</code> and choose a CUNY AI Lab model</div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true" style="background:var(--accent);">?</div><div class="step-text">Something off? Run the health check, or just ask!<code class="code-block">npx @cuny-ai-lab/pi-workshop --doctor      # macOS
+npx.cmd @cuny-ai-lab/pi-workshop --doctor  # Windows</code></div></div>
       </div>
     </div>
   </section>
@@ -965,8 +963,7 @@ assets/
     </div>
     <div class="stage">
       <div class="step-grid" role="list">
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text">Install GitHub CLI<code class="code-block">brew install gh          # macOS
-winget install GitHub.cli  # Windows</code></div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text">Install GitHub CLI<br><strong>macOS:</strong> run the installer from <a href="https://cli.github.com" target="_blank" rel="noopener">cli.github.com</a><br><strong>Windows:</strong> <code>winget install GitHub.cli</code>, then open a new PowerShell window</div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text">Run <code>gh auth login</code></div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">Choose <strong>GitHub.com</strong> &rarr; <strong>HTTPS</strong> &rarr; <strong>Login with a web browser</strong></div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">4</div><div class="step-text">Complete authentication in the browser</div></div>
@@ -1045,6 +1042,10 @@ winget install GitHub.cli  # Windows</code></div></div>
               <div class="res-desc">Thursday, October 29 &middot; Tuesday, November 17 &middot; Thursday, December 3 &middot; 2:00&ndash;4:00 pm</div>
             </li>
             <li>
+              <span style="font-size:clamp(15px,1.7vw,20px); color:var(--fg);">Mind your quota</span>
+              <div class="res-desc">Your API key has a limited quota. Keep an eye on it so you don&rsquo;t burn through it before the next session.</div>
+            </li>
+            <li>
               <a href="https://cail-workshop-registration.ailab-452.workers.dev/" target="_blank" rel="noopener">Register</a>
               <div class="res-desc">Sign up for upcoming CUNY AI Lab workshops and sessions</div>
             </li>
@@ -1057,6 +1058,10 @@ winget install GitHub.cli  # Windows</code></div></div>
             <li>
               <a href="https://ailab.gc.cuny.edu" target="_blank" rel="noopener">ailab.gc.cuny.edu</a>
               <div class="res-desc">CUNY AI Lab main site</div>
+            </li>
+            <li>
+              <a href="https://ailab.gc.cuny.edu/events/" target="_blank" rel="noopener">ailab.gc.cuny.edu/events</a>
+              <div class="res-desc">Upcoming workshops, co-working sessions, and registration</div>
             </li>
             <li>
               <a href="https://chat.ailab.gc.cuny.edu" target="_blank" rel="noopener">chat.ailab.gc.cuny.edu</a>
@@ -1082,7 +1087,7 @@ winget install GitHub.cli  # Windows</code></div></div>
             </li>
             <li>
               <a href="https://github.com/CUNY-AI-Lab/pi-workshop" target="_blank" rel="noopener">github.com/CUNY-AI-Lab/pi-workshop</a>
-              <div class="res-desc">CUNY AI Lab × Pi setup and troubleshooting</div>
+              <div class="res-desc">CUNY AI Lab × Pi setup, <code>--doctor</code> health check, and troubleshooting</div>
             </li>
             <li>
               <a href="https://cli.github.com" target="_blank" rel="noopener">cli.github.com</a>

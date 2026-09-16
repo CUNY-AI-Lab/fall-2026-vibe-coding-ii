@@ -22,23 +22,23 @@ Companion to `index.html`. Keep this file in sync whenever slide titles or text 
 
 **Stage (agenda table):**
 
-Part 0 — Review + Framing (20m):
+Part 0 — Review + Framing (15m):
 
 - Foundations Review
 - From Chatbots to Agents
 
-Part 1 — Setup (10m):
-- Your CUNY AI Lab API Key
-- Install Homebrew / Node.js
+Part 1 — Setup (25m):
+- Your CUNY AI Lab API Key & Quota
+- Install Node.js
 - Install and launch Pi
 
-Part 2 — Plan + Act:
+Part 2 — Plan + Act (25m):
 - Planning stage
 - Acting stage
 - Verify the reorganized project
 - Create `AGENTS.md`
 
-Part 3 — Prototype + Publish:
+Part 3 — Prototype + Publish (25m):
 - Customize the focus timer
 - Authenticate with GitHub CLI
 - Create remote repository
@@ -171,33 +171,34 @@ Part 3 — Prototype + Publish:
 
 * * *
 
-## Slide 13 — Your CUNY AI Lab API Key (PLACEHOLDER)
+## Slide 13 — Your CUNY AI Lab API Key & Quota (PLACEHOLDER)
 
 **Label:** Coming Soon
-**Title:** Your CUNY AI Lab API Key
+**Title:** Your CUNY AI Lab API Key & Quota
 
 **Stage (stageCenter):**
-- **Big:** Placeholder: Steve's introduction to the CUNY AI Lab gateway
-- **Hint:** What the gateway is, how to get your personal API key, and how to keep it safe. You'll paste the key during setup on the next slides.
+- **Big:** Placeholder: Steve's introduction to the CUNY AI Lab gateway, API keys, and quota
+- **Hint:** What the gateway is, how to get your personal API key and keep it safe, and how your quota works so you don't run out before the next workshop. You'll paste the key during setup on the next slides.
 
-> TODO (Steve): replace this placeholder with the gateway / API key section.
+> TODO (Steve): replace this placeholder with the gateway / API key / quota section.
 
 * * *
 
-## Slide 14 — Install Homebrew / Node.js
+## Slide 14 — Install Node.js
 
 **Label:** Setup
-**Title:** Install Homebrew / Node.js
+**Title:** Install Node.js
+**Subtitle:** Pi needs Node.js 22.19 or newer
 
 **Stage (stageCompare):**
 
 - **macOS — Terminal:**
-  1. Install Homebrew from brew.sh
-  2. Add Homebrew to PATH
-  3. Install Node.js and confirm (22.19 or newer): `brew install node`, `node --version`
+  1. Download and run the installer from nodejs.org
+  2. Open a new Terminal window
+  3. Confirm with `node --version`
 
 - **Windows — PowerShell:**
-  1. Install Node.js (22.19 or newer): `winget install OpenJS.NodeJS.LTS`
+  1. Install Node.js: `winget install OpenJS.NodeJS.LTS`
   2. Close PowerShell and open a new window
   3. Confirm with `node --version`
 
@@ -214,6 +215,7 @@ Part 3 — Prototype + Publish:
 3. At `CUNY AI Lab API key:` paste your key (your typing stays hidden)
 4. Start Pi with `pi` (`pi.cmd` on Windows)
 5. Type `/model` and choose a CUNY AI Lab model
+- **?** Something off? Run the health check (`npx @cuny-ai-lab/pi-workshop --doctor`, or `npx.cmd` on Windows), or just ask!
 
 * * *
 
@@ -310,7 +312,7 @@ Part 3 — Prototype + Publish:
 **Title:** Authenticate with GitHub CLI
 
 **Stage (step-grid, fragments):**
-1. Install GitHub CLI (`brew install gh` on macOS, `winget install GitHub.cli` on Windows)
+1. Install GitHub CLI — macOS: run the installer from cli.github.com · Windows: `winget install GitHub.cli`, then open a new PowerShell window
 2. Run `gh auth login`
 3. Choose GitHub.com → HTTPS → Login with a web browser
 4. Complete authentication in the browser
@@ -368,20 +370,22 @@ Part 3 — Prototype + Publish:
 Next Steps:
 - [Vibe Coding III: Bring Your Own Project Clinic](https://cail-workshop-registration.ailab-452.workers.dev/) — Tuesday, October 13 · 2:30–4:00 pm · New Media Lab (Room 7388.01) · Prerequisite: Vibe Coding I & II
 - [Co-Working Sessions](https://ailab.gc.cuny.edu/events/) — Thursday, October 29 · Tuesday, November 17 · Thursday, December 3 · 2:00–4:00 pm
+- **Mind your quota** — Your API key has a limited quota. Keep an eye on it so you don't burn through it before the next session.
 - [Register](https://cail-workshop-registration.ailab-452.workers.dev/) — Sign up for upcoming CUNY AI Lab workshops and sessions
 
 CAIL:
 - [ailab.gc.cuny.edu](https://ailab.gc.cuny.edu) — CUNY AI Lab main site
+- [ailab.gc.cuny.edu/events](https://ailab.gc.cuny.edu/events/) — Upcoming workshops, co-working sessions, and registration
 - [chat.ailab.gc.cuny.edu](https://chat.ailab.gc.cuny.edu) — CAIL Sandbox (Open WebUI)
 - [github.com/cuny-ai-lab](https://github.com/cuny-ai-lab) — GitHub workshops and repos
 
 Tools & Docs:
 - [pi.dev](https://pi.dev) — Pi coding agent
-- [github.com/CUNY-AI-Lab/pi-workshop](https://github.com/CUNY-AI-Lab/pi-workshop) — CUNY AI Lab × Pi setup and troubleshooting
+- [github.com/CUNY-AI-Lab/pi-workshop](https://github.com/CUNY-AI-Lab/pi-workshop) — CUNY AI Lab × Pi setup, `--doctor` health check, and troubleshooting
 - [cli.github.com](https://cli.github.com) — GitHub CLI
 - [docs.github.com](https://docs.github.com) — GitHub documentation
 - [agents.md](https://agents.md) — AGENTS.md specification
 
 * * *
 
-_Last synced: 2026-09-16 (Pi setup, API key placeholder slide). Deck has 27 slides. Update both this file and `index.html` together._
+_Last synced: 2026-09-16 (Fall 2026 update: Vibe Coding II title and dates; Pi + CUNY AI Lab setup replaces Gemini CLI; /plan approval flow; no Homebrew; API key & quota placeholder; next steps, co-working, quota reminder; events link). Deck has 27 slides. Update both this file and `index.html` together._
