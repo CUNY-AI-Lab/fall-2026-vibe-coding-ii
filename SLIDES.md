@@ -29,7 +29,7 @@ Part 0 — Review + Framing (15m):
 
 Part 1 — Setup (25m):
 - Your CUNY AI Lab API Key & Quota
-- Install Node.js
+- Install Node.js & Git
 - Install and launch Pi
 
 Part 2 — Plan + Act (25m):
@@ -184,23 +184,23 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 14 — Install Node.js
+## Slide 14 — Install Node.js & Git
 
 **Label:** Setup
-**Title:** Install Node.js
-**Subtitle:** Pi needs Node.js 22.19 or newer
+**Title:** Install Node.js & Git
+**Subtitle:** Pi's installer needs Node.js 22.19 or newer and Git
 
 **Stage (stageCompare):**
 
 - **macOS — Terminal:**
   1. Download and run the installer from nodejs.org
   2. Open a new Terminal window
-  3. Confirm with `node --version`
+  3. Confirm with `node --version` and `git --version` (if macOS offers to install developer tools for Git, click Install)
 
 - **Windows — PowerShell:**
-  1. Install Node.js: `winget install OpenJS.NodeJS.LTS`
+  1. Install Node.js and Git: `winget install OpenJS.NodeJS.LTS`, `winget install Git.Git`
   2. Close PowerShell and open a new window
-  3. Confirm with `node --version`
+  3. Confirm with `node --version` and `git --version`
 
 * * *
 
@@ -211,7 +211,7 @@ Part 3 — Prototype + Publish (25m):
 
 **Stage (step-grid, fragments):**
 1. Run the workshop setup: `npx @cuny-ai-lab/pi-workshop` (macOS) / `npx.cmd @cuny-ai-lab/pi-workshop` (Windows)
-2. When LazyPi offers to install Pi and its packages, accept the defaults (install all)
+2. When LazyPi asks, choose **Install everything**. It takes a few minutes; warnings, a skipped package, and a note about `/login` are normal: ignore them and wait for the key prompt
 3. At `CUNY AI Lab API key:` paste your key (your typing stays hidden)
 4. Start Pi with `pi` (`pi.cmd` on Windows)
 5. Type `/model` and choose a CUNY AI Lab model

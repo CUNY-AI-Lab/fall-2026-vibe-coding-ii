@@ -574,7 +574,7 @@
             <span class="agenda-section-time">25m</span>
           </div>
           <a class="agenda-item" href="#13"><span class="agenda-item-label">Your CUNY AI Lab API Key &amp; Quota</span></a>
-          <a class="agenda-item" href="#14"><span class="agenda-item-label">Install Node.js</span></a>
+          <a class="agenda-item" href="#14"><span class="agenda-item-label">Install Node.js &amp; Git</span></a>
           <a class="agenda-item" href="#15"><span class="agenda-item-label">Install and Launch Pi</span></a>
         </div>
 
@@ -789,12 +789,12 @@
     </div>
   </section>
 
-  <!-- 14 · INSTALL NODE.JS -->
-  <section class="slide" data-slide="node-setup" aria-label="Install Node.js">
+  <!-- 14 · INSTALL NODE.JS & GIT -->
+  <section class="slide" data-slide="node-setup" aria-label="Install Node.js and Git">
     <div class="content">
       <div class="label">Setup</div>
-      <h1>Install Node.js</h1>
-      <h2>Pi needs Node.js 22.19 or newer</h2>
+      <h1>Install Node.js &amp; Git</h1>
+      <h2>Pi&rsquo;s installer needs Node.js 22.19 or newer and Git</h2>
     </div>
     <div class="stage">
       <div class="stageCompare">
@@ -805,18 +805,22 @@
             1. Download and run the installer from <a href="https://nodejs.org/en/download" target="_blank" rel="noopener">nodejs.org</a><br>
             2. Open a new Terminal window<br>
             3. Confirm with:
-            <code class="code-block">node --version</code>
+            <code class="code-block">node --version
+git --version</code>
+            <span style="opacity:0.7;">If macOS offers to install developer tools for Git, click Install</span>
           </div>
         </div>
         <div class="col">
           <div class="col-tag">Windows</div>
           <div class="col-title">PowerShell</div>
           <div class="col-sub">
-            1. Install Node.js:
-            <code class="code-block">winget install OpenJS.NodeJS.LTS</code>
+            1. Install Node.js and Git:
+            <code class="code-block">winget install OpenJS.NodeJS.LTS
+winget install Git.Git</code>
             2. Close PowerShell and open a new window<br>
             3. Confirm with:
-            <code class="code-block">node --version</code>
+            <code class="code-block">node --version
+git --version</code>
           </div>
         </div>
       </div>
@@ -833,7 +837,7 @@
       <div class="step-grid" role="list">
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text">Run the workshop setup<code class="code-block">npx @cuny-ai-lab/pi-workshop      # macOS
 npx.cmd @cuny-ai-lab/pi-workshop  # Windows</code></div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text">When LazyPi offers to install Pi and its packages, accept the defaults (install all)</div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text">When LazyPi asks, choose <strong>Install everything</strong><br><span style="opacity:0.7;">It takes a few minutes. Warnings, a skipped package, and a note about <code>/login</code> are normal: ignore them and wait for the key prompt</span></div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">At <code>CUNY AI Lab API key:</code> paste your key (your typing stays hidden)</div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">4</div><div class="step-text">Start Pi with <code>pi</code> (<code>pi.cmd</code> on Windows)</div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">5</div><div class="step-text">Type <code>/model</code> and choose a CUNY AI Lab model</div></div>
