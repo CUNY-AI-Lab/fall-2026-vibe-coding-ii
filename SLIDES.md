@@ -263,7 +263,7 @@ Part 3 — Prototype + Publish:
 **Title:** Open and Test Project
 
 **Stage (step-grid, fragments):**
-1. Check the file structure in terminal or Finder: `css/`, `js/`, `assets/`
+1. Check the file structure in Finder (macOS) or File Explorer (Windows): `css/`, `js/`, `assets/`
 2. Double-click `index.html` to open in the browser
 3. Try the focus timer. Does it start, pause, and reset?
 4. Check the console for errors (`Cmd+Option+J` / `Ctrl+Shift+J`)
