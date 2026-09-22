@@ -94,6 +94,15 @@ document.addEventListener('keydown', e => {
     toggleOverview();
     return;
   }
+  if (e.key === 'f' || e.key === 'F') {
+    e.preventDefault();
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    } else {
+      document.documentElement.requestFullscreen().catch(() => {});
+    }
+    return;
+  }
   if (document.body.classList.contains('overview')) return;
   if (['ArrowRight','PageDown',' '].includes(e.key)) {
     e.preventDefault();
