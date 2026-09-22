@@ -210,12 +210,12 @@ Part 3 — Prototype + Publish (25m):
 **Title:** Install and Launch Pi
 
 **Stage (step-grid, fragments):**
-1. Run the workshop setup: `npx @cuny-ai-lab/pi-workshop` (macOS) / `npx.cmd @cuny-ai-lab/pi-workshop` (Windows)
+1. Run the workshop setup: `npx @cuny-ai-lab/cail-pi` (macOS) / `npx.cmd @cuny-ai-lab/cail-pi` (Windows)
 2. When LazyPi asks, choose **Install everything**. It takes a few minutes; warnings, a skipped package, and a note about `/login` are normal: ignore them and wait for the key prompt
 3. At `CUNY AI Lab API key:` paste your key (your typing stays hidden)
 4. Start Pi with `pi` (`pi.cmd` on Windows)
 5. Type `/model` and choose a CUNY AI Lab model
-- **?** Something off? Run the health check (`npx @cuny-ai-lab/pi-workshop --doctor`, or `npx.cmd` on Windows), or just ask!
+- **?** Something off? Run the health check (`npx @cuny-ai-lab/cail-pi --doctor`, or `npx.cmd` on Windows), or just ask!
 
 * * *
 
@@ -381,7 +381,7 @@ CAIL:
 
 Tools & Docs:
 - [pi.dev](https://pi.dev) — Pi coding agent
-- [github.com/CUNY-AI-Lab/pi-workshop](https://github.com/CUNY-AI-Lab/pi-workshop) — CUNY AI Lab × Pi setup, `--doctor` health check, and troubleshooting
+- [github.com/CUNY-AI-Lab/cail-pi](https://github.com/CUNY-AI-Lab/cail-pi) — CUNY AI Lab × Pi setup, `--doctor` health check, and troubleshooting
 - [cli.github.com](https://cli.github.com) — GitHub CLI
 - [docs.github.com](https://docs.github.com) — GitHub documentation
 - [agents.md](https://agents.md) — AGENTS.md specification
