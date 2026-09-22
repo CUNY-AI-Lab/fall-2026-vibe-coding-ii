@@ -346,6 +346,55 @@
 
     /* resource list */
     .res-wrap { position: relative; width: 100%; padding: clamp(10px,1.5vw,20px) clamp(14px,2vw,24px); overflow-y: auto; }
+
+    /* API key / gateway guide (ported from Vibe Coding I) */
+    .key-guide {
+      position: relative; width: 100%;
+      display: flex; flex-direction: column; justify-content: center;
+      gap: clamp(16px,2vw,24px); padding: clamp(22px,3vw,36px);
+    }
+    .key-guide-shot {
+      display: block; width: min(100%, 520px); height: auto; margin: 0 auto;
+      border: 1px solid rgba(121,192,255,0.24); border-radius: 10px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.32);
+    }
+    .key-guide-gateway {
+      margin: 0; padding-left: 14px; border-left: 3px solid var(--part);
+      font-size: clamp(16px,1.55vw,20px); line-height: 1.45;
+      color: var(--muted); opacity: 0.9;
+    }
+    .key-guide-lead {
+      margin: 0; font-size: clamp(18px,1.8vw,23px); font-weight: 650;
+      line-height: 1.42; color: rgba(255,255,255,0.92);
+    }
+    .key-guide-details {
+      display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px,2vw,24px);
+      padding-top: clamp(14px,1.8vw,20px); border-top: 1px solid rgba(255,255,255,0.10);
+    }
+    .key-guide-details > div + div { border-left: 1px solid rgba(255,255,255,0.10); padding-left: clamp(16px,2vw,24px); }
+    .key-guide-details h3 { margin: 0 0 6px; font-size: clamp(15px,1.45vw,18px); color: var(--part); }
+    .key-guide-details p {
+      margin: 0; font-size: clamp(14px,1.35vw,17px); line-height: 1.45;
+      color: var(--muted); opacity: 0.85;
+    }
+    .key-guide-link {
+      align-self: flex-start; font-size: clamp(12px,1.15vw,14px); color: var(--accent);
+      text-decoration: none;
+    }
+    .key-guide-link:hover { text-decoration: underline; }
+    @media (max-width: 719px) {
+      .key-guide { gap: 10px; padding: 16px 20px; }
+      .key-guide-gateway { padding-left: 12px; font-size: 14px; line-height: 1.35; }
+      .key-guide-lead { font-size: 17px; line-height: 1.35; }
+      .key-guide-details { grid-template-columns: 1fr; gap: 8px; padding-top: 10px; }
+      .key-guide-details > div + div {
+        border-left: 0; border-top: 1px solid rgba(255,255,255,0.10);
+        padding: 8px 0 0;
+      }
+      .key-guide-details h3 { margin-bottom: 4px; font-size: 14px; }
+      .key-guide-details p { font-size: 13px; line-height: 1.35; }
+      .key-guide-link { font-size: 12px; }
+    }
     .res-group { margin-bottom: clamp(12px,2vw,20px); }
     .res-group:last-child { margin-bottom: 0; }
     .res-group-title {
@@ -442,6 +491,7 @@
       .step-grid { position: absolute; inset: clamp(12px,2vw,24px); width: auto; overflow-y: auto; }
       .agenda-table { position: absolute; inset: 0; width: auto; overflow-y: auto; }
       .res-wrap { position: absolute; inset: 0; width: auto; overflow-y: auto; }
+      .key-guide { position: absolute; inset: 0; width: auto; overflow-y: auto; }
     }
 
     /* ── LARGE DESKTOP ── */
@@ -773,18 +823,28 @@
     </div>
   </section>
 
-  <!-- 13 · PLACEHOLDER: CUNY AI LAB GATEWAY & API KEY (Steve) -->
+  <!-- 13 · CUNY AI LAB API KEY & QUOTA -->
   <section class="slide" data-slide="api-key" aria-label="Your CUNY AI Lab API Key and Quota">
     <div class="content">
-      <div class="label">Coming Soon</div>
+      <div class="label">Setup</div>
       <h1>Your CUNY AI Lab API Key &amp; Quota</h1>
     </div>
     <div class="stage">
-      <div class="stageCenter">
-        <div class="stageInner">
-          <div class="stageBig">Placeholder: Steve&rsquo;s introduction to the CUNY AI Lab gateway, API keys, and quota</div>
-          <div class="stageHint">What the gateway is, how to get your personal API key and keep it safe, and how your quota works so you don&rsquo;t run out before the next workshop. You&rsquo;ll paste the key during setup on the next slides.</div>
+      <div class="key-guide">
+        <p class="key-guide-gateway">The CUNY AI Lab Gateway connects Pi to the models available through the Lab. Your personal key identifies your account and applies your quota.</p>
+        <img class="key-guide-shot" src="img/cail-api-key-creation-mobile.jpg" alt="CUNY AI Lab Model access form with a key name field and Create key button">
+        <p class="key-guide-lead">Create a personal key in your CUNY AI Lab Dashboard. Copy it when it appears. You cannot reveal the complete key again.</p>
+        <div class="key-guide-details">
+          <div>
+            <h3>Keep it private</h3>
+            <p>Paste the key only into Pi&rsquo;s hidden prompt. Never put it in chat, GitHub, screenshots, or email.</p>
+          </div>
+          <div>
+            <h3>Your quota</h3>
+            <p>All your personal keys share one allowance. Creating another key does not add capacity. Check your current usage in the Dashboard.</p>
+          </div>
         </div>
+        <a class="key-guide-link" href="https://ailab.gc.cuny.edu/docs/api-keys/" target="_blank" rel="noopener">ailab.gc.cuny.edu/docs/api-keys/</a>
       </div>
     </div>
   </section>

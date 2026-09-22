@@ -171,16 +171,18 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 13 — Your CUNY AI Lab API Key & Quota (PLACEHOLDER)
+## Slide 13 — Your CUNY AI Lab API Key & Quota
 
-**Label:** Coming Soon
+**Label:** Setup
 **Title:** Your CUNY AI Lab API Key & Quota
 
-**Stage (stageCenter):**
-- **Big:** Placeholder: Steve's introduction to the CUNY AI Lab gateway, API keys, and quota
-- **Hint:** What the gateway is, how to get your personal API key and keep it safe, and how your quota works so you don't run out before the next workshop. You'll paste the key during setup on the next slides.
-
-> TODO (Steve): replace this placeholder with the gateway / API key / quota section.
+**Stage (key guide):**
+- **Gateway:** The CUNY AI Lab Gateway connects Pi to the models available through the Lab. Your personal key identifies your account and applies your quota.
+- Compact screenshot of the CUNY AI Lab Dashboard's key-creation form
+- **Lead:** Create a personal key in your CUNY AI Lab Dashboard. Copy it when it appears. You cannot reveal the complete key again.
+- **Keep it private:** Paste the key only into Pi's hidden prompt. Never put it in chat, GitHub, screenshots, or email.
+- **Your quota:** All your personal keys share one allowance. Creating another key does not add capacity. Check your current usage in the Dashboard.
+- **Guide:** https://ailab.gc.cuny.edu/docs/api-keys/
 
 * * *
 
@@ -388,4 +390,4 @@ Tools & Docs:
 
 * * *
 
-_Last synced: 2026-09-16 (Fall 2026 update: Vibe Coding II title and dates; Pi + CUNY AI Lab setup replaces Gemini CLI; /plan approval flow; no Homebrew; API key & quota placeholder; next steps, co-working, quota reminder; events link). Deck has 27 slides. Update both this file and `index.html` together._
+_Last synced: 2026-09-22 (installer renamed to `@cuny-ai-lab/cail-pi`; credits trimmed to Stefano and Steve; API key & quota slide ported from Vibe Coding I, replacing the placeholder). Deck has 27 slides. Update both this file and `index.html` together._
