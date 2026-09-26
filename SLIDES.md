@@ -314,7 +314,7 @@ Part 3 — Prototype + Publish (25m):
 **Title:** Authenticate with GitHub CLI
 
 **Stage (step-grid, fragments):**
-1. Install GitHub CLI — macOS: run the installer from cli.github.com · Windows: `winget install GitHub.cli`, then open a new PowerShell window
+1. Install GitHub CLI — macOS: install Homebrew from brew.sh (`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`, then run the "Next steps" commands it prints), then `brew install gh` · Windows: `winget install GitHub.cli`, then open a new PowerShell window
 2. Run `gh auth login`
 3. Choose GitHub.com → HTTPS → Login with a web browser
 4. Complete authentication in the browser
