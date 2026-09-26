@@ -577,6 +577,55 @@
     @media (min-width: 720px) {
       body.overview section.slide { flex-direction: column; }
     }
+  
+    /* Fit on short screens (laptops, projectors at 1280x720).
+       Centered panels use auto margins instead of justify-content:center, so
+       when content is taller than the panel it starts at the top and scrolls
+       instead of being cut off above where scrolling can't reach it. */
+    .key-guide, .stageCompare .col { justify-content: flex-start; }
+    .key-guide > :first-child, .stageCompare .col > :first-child { margin-top: auto; }
+    .key-guide > :last-child, .stageCompare .col > :last-child { margin-bottom: auto; }
+    .stageCenter { align-items: flex-start; overflow-y: auto; }
+    .stageCenter > .stageInner { margin-top: auto; margin-bottom: auto; }
+    /* Text and spacing also scale with viewport height, not just width */
+    .step-row { padding-top: clamp(5px,1.1vh,10px); padding-bottom: clamp(5px,1.1vh,10px); }
+    .step-text { font-size: clamp(16px, min(2.2vw, 2.6vh), 26px); }
+    .stageCompare .col { padding-top: clamp(16px,3.5vh,44px); padding-bottom: clamp(16px,3.5vh,44px); }
+    .stageCompare .col-sub { font-size: clamp(15px, min(1.9vw, 2.5vh), 22px); line-height: 1.5; }
+    .stage .code-block { margin-top: clamp(4px,0.8vh,8px); margin-bottom: clamp(3px,0.6vh,6px); }
+    @media (min-width: 720px) {
+      .agenda-section { margin-bottom: clamp(6px,2vh,14px); }
+      .agenda-section-head { padding-bottom: clamp(3px,0.8vh,8px); margin-bottom: clamp(3px,0.8vh,8px); }
+      .agenda-item { padding-top: clamp(1px,0.45vh,4px); padding-bottom: clamp(1px,0.45vh,4px); }
+      .agenda-item-label { font-size: clamp(14px, min(1.6vw, 2.3vh), 20px); }
+      .agenda-section-title { font-size: clamp(14px, min(1.8vw, 2.6vh), 21px); }
+      .key-guide { gap: clamp(10px,2vh,24px); padding-top: clamp(14px,3vh,36px); padding-bottom: clamp(14px,3vh,36px); }
+      .key-guide-shot { width: min(100%, 520px, 46vh); }
+      .stageBig { font-size: clamp(24px, min(3.5vw, 5.2vh), 42px); }
+      .stageHint { margin-top: clamp(10px,2.4vh,22px); }
+      .stageList li { margin: clamp(3px,1vh,10px) 0; }
+      .res-list li { padding-top: clamp(4px,0.9vh,8px); padding-bottom: clamp(4px,0.9vh,8px); }
+      .stage .code-block { font-size: clamp(11px, min(1.3vw, 2vh), 15px); }
+      .stageHint { font-size: clamp(15px, min(1.8vw, 2.7vh), 24px); }
+      .stageList { font-size: clamp(16px, min(2.1vw, 3vh), 26px); }
+      .step-grid { padding-top: clamp(6px,1.5vh,24px); padding-bottom: clamp(6px,1.5vh,24px); }
+      .agenda-table { padding-top: clamp(10px,2.4vh,28px); padding-bottom: clamp(10px,2.4vh,28px); }
+    }
+    /* 4:3 projectors (1024x768): give the stage a little more of the width */
+    @media (min-width: 871px) and (max-width: 1150px) {
+      body:not(.overview) section.slide:not([data-slide="title"]):not(.slide-break) .content { flex-basis: 38%; }
+      body:not(.overview) section.slide:not([data-slide="title"]):not(.slide-break) .stage { flex-basis: 58%; }
+    }
+    /* Resources: two balanced columns when the stage is wide enough, with
+       link text scaled to screen height so the list fits on short screens */
+    @media (min-width: 1000px) {
+      .res-wrap { column-count: 2; column-gap: clamp(16px,2vw,28px); }
+      .res-group { break-inside: auto; }
+      .res-group-title { break-after: avoid; }
+      .res-list li { break-inside: avoid; }
+      .res-list li a { font-size: clamp(14px, min(1.7vw, 2.3vh), 20px); }
+      .res-desc { font-size: clamp(12px, min(1.3vw, 1.9vh), 15px); }
+    }
   </style>
 </head>
 <body>
@@ -878,14 +927,14 @@
           <div class="col-tag">macOS</div>
           <div class="col-title">Terminal</div>
           <div class="col-sub">
-            1. Install <a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a> (skip if you already have it), then run the &ldquo;Next steps&rdquo; commands it prints:
+            1. No <a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a> yet? Install it, then run the &ldquo;Next steps&rdquo; commands it prints:
             <code class="code-block">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</code>
             2. Install Node.js:
             <code class="code-block">brew install node</code>
             3. Open a new Terminal window and confirm:
             <code class="code-block">node --version
 git --version</code>
-            <span style="opacity:0.7;">Used <code>sudo</code> to install Pi last time? Tell us before you continue</span>
+            <span style="opacity:0.7;">Used <code>sudo</code> for Pi last time? Tell us first</span>
           </div>
         </div>
         <div class="col">
@@ -915,7 +964,7 @@ git --version</code>
       <div class="step-grid" role="list">
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text">Run the workshop setup<code class="code-block">npx @cuny-ai-lab/cail-pi      # macOS
 npx.cmd @cuny-ai-lab/cail-pi  # Windows</code></div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text">When LazyPi asks, choose <strong>Install everything</strong><br><span style="opacity:0.7;">It takes a few minutes. Warnings, a skipped package, and a note about <code>/login</code> are normal: ignore them and wait for the key prompt</span></div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text">When LazyPi asks, choose <strong>Install everything</strong><br><span style="opacity:0.7;">Takes a few minutes. Warnings and a note about <code>/login</code> are normal: wait for the key prompt</span></div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">At <code>CUNY AI Lab API key:</code> paste your key (your typing stays hidden)</div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">4</div><div class="step-text">Start Pi with <code>pi</code> (<code>pi.cmd</code> on Windows)</div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">5</div><div class="step-text">Type <code>/model</code> and choose a CUNY AI Lab model</div></div>
