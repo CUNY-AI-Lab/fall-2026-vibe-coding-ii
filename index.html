@@ -344,6 +344,21 @@
       white-space: pre-wrap; word-break: break-all;
     }
 
+    /* copy buttons (added per line by src/slides.js) */
+    .stage .code-block .code-line { display: flex; align-items: flex-start; gap: 10px; }
+    .stage .code-block .code-text { flex: 1; min-width: 0; }
+    .stage .code-block .code-note { opacity: 0.55; }
+    .copy-btn {
+      flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
+      width: 22px; height: 18px; padding: 0; margin: 0 -4px -2px 0;
+      background: rgba(255,255,255,0.06); color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.12); border-radius: 6px;
+      cursor: pointer; transition: color 0.15s, background 0.15s, border-color 0.15s;
+    }
+    .copy-btn:hover { color: var(--accent); background: rgba(121,192,255,0.12); border-color: rgba(121,192,255,0.35); }
+    .copy-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .copy-btn.copied { color: #7ee787; border-color: rgba(126,231,135,0.45); }
+
     /* resource list */
     .res-wrap { position: relative; width: 100%; padding: clamp(10px,1.5vw,20px) clamp(14px,2vw,24px); overflow-y: auto; }
 
@@ -1030,9 +1045,10 @@ assets/
     </div>
     <div class="stage">
       <div class="step-grid" role="list">
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text"><strong>macOS:</strong> install the GitHub CLI with Homebrew<code class="code-block">brew install gh</code></div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text"><strong>Windows:</strong> install it, then open a new PowerShell window<code class="code-block">winget install GitHub.cli</code></div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">Check that it worked:<code class="code-block">gh --version</code></div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text"><strong>macOS:</strong> no Homebrew yet? Install it, then run the &ldquo;Next steps&rdquo; commands it prints<code class="code-block">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</code></div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text"><strong>macOS:</strong> install the GitHub CLI<code class="code-block">brew install gh</code></div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text"><strong>Windows:</strong> install it, then open a new PowerShell window<code class="code-block">winget install GitHub.cli</code></div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">4</div><div class="step-text">Check that it worked:<code class="code-block">gh --version</code></div></div>
       </div>
     </div>
   </section>

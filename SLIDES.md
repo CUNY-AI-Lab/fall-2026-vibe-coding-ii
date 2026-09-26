@@ -316,9 +316,10 @@ Part 3 — Prototype + Publish (25m):
 **Title:** Install GitHub CLI
 
 **Stage (step-grid, fragments):**
-1. macOS: install the GitHub CLI with Homebrew: `brew install gh`
-2. Windows: `winget install GitHub.cli`, then open a new PowerShell window
-3. Check that it worked: `gh --version`
+1. macOS: no Homebrew yet? Install it, then run the "Next steps" commands it prints: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+2. macOS: `brew install gh`
+3. Windows: `winget install GitHub.cli`, then open a new PowerShell window
+4. Check that it worked: `gh --version`
 
 * * *
 

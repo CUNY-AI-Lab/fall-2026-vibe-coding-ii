@@ -197,5 +197,71 @@ window.addEventListener('hashchange', () => {
 // Initialize all fragments as hidden from assistive tech
 document.querySelectorAll('.frag').forEach(f => f.setAttribute('aria-hidden', 'true'));
 
+// Copy buttons: one per line of every code block. Trailing "# comment"
+// labels (e.g. "# macOS") stay visible but are left out of the copy,
+// since zsh doesn't treat # as a comment when pasted interactively.
+const COPY_ICON = '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M10.5 3.5v-.5A1.5 1.5 0 0 0 9 1.5H4A1.5 1.5 0 0 0 2.5 3v5A1.5 1.5 0 0 0 4 9.5h.5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>';
+const CHECK_ICON = '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text);
+  }
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.setAttribute('readonly', '');
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  const ok = document.execCommand('copy');
+  ta.remove();
+  return ok ? Promise.resolve() : Promise.reject(new Error('copy failed'));
+}
+
+document.querySelectorAll('.code-block').forEach(block => {
+  const lines = block.textContent.split('\n').filter(line => line.trim() !== '');
+  block.textContent = '';
+  lines.forEach(line => {
+    const m = line.match(/^(.*?\S)(\s+#\s.*)$/);
+    const command = m ? m[1] : line;
+    const row = document.createElement('span');
+    row.className = 'code-line';
+    const text = document.createElement('span');
+    text.className = 'code-text';
+    text.textContent = command;
+    if (m) {
+      const note = document.createElement('span');
+      note.className = 'code-note';
+      note.textContent = m[2];
+      text.appendChild(note);
+    }
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'copy-btn';
+    btn.setAttribute('aria-label', `Copy: ${command}`);
+    btn.title = 'Copy';
+    btn.innerHTML = COPY_ICON;
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      // Mouse clicks shouldn't leave focus here, or Space stops advancing slides
+      if (e.detail > 0) btn.blur();
+      copyText(command).then(() => {
+        btn.classList.add('copied');
+        btn.innerHTML = CHECK_ICON;
+        btn.setAttribute('aria-label', 'Copied');
+        clearTimeout(btn._reset);
+        btn._reset = setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = COPY_ICON;
+          btn.setAttribute('aria-label', `Copy: ${command}`);
+        }, 1500);
+      }).catch(() => {});
+    });
+    row.append(text, btn);
+    block.appendChild(row);
+  });
+});
+
 const m = location.hash.match(/^#(\d+)$/);
 show(m ? clamp(parseInt(m[1], 10) - 1, 0, slides.length - 1) : 0, true);

@@ -17,7 +17,7 @@ A static slide deck for **Vibe Coding II: Building a Prototype** (CUNY AI Lab ·
 ## Architecture
 
 - **`index.html`** — Single-file slide deck. All slides are `<section class="slide">` elements inside `<main>`. All CSS is inlined in `<style>`. No external stylesheets.
-- **`src/slides.js`** — Slide engine: keyboard/touch/scrubber navigation, progressive fragment reveal (`.frag` class), overview mode (Escape key), hash-based routing.
+- **`src/slides.js`** — Slide engine: keyboard/touch/scrubber navigation, progressive fragment reveal (`.frag` class), overview mode (Escape key), hash-based routing. Also adds a copy button to every line of each `.code-block` (trailing `# macOS`-style notes are shown but not copied), so code blocks must stay plain text, one command per line.
 - **`src/chladni.html`** — Standalone canvas animation embedded as an iframe in the title slide.
 - **`src/prototype.zip`** — Downloadable starter files (messy focus-timer project) used in the workshop demo. Referenced by the "Planning Stage" slide.
 - **`SLIDES.md`** — Plain-text mirror of slide content. Must stay in sync with `index.html` whenever slide text changes. Includes slide count in the last line.
