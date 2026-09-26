@@ -308,21 +308,33 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 23 — Authenticate with GitHub CLI
+## Slide 23 — Install GitHub CLI
+
+**Label:** Publish
+**Title:** Install GitHub CLI
+
+**Stage (step-grid, fragments):**
+1. macOS: install Homebrew from brew.sh, then run the "Next steps" commands it prints: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+2. macOS: `brew install gh`
+3. Windows: `winget install GitHub.cli`, then open a new PowerShell window
+4. Check that it worked: `gh --version`
+
+* * *
+
+## Slide 24 — Authenticate with GitHub CLI
 
 **Label:** Publish
 **Title:** Authenticate with GitHub CLI
 
 **Stage (step-grid, fragments):**
-1. Install GitHub CLI — macOS: install Homebrew from brew.sh (`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`, then run the "Next steps" commands it prints), then `brew install gh` · Windows: `winget install GitHub.cli`, then open a new PowerShell window
-2. Run `gh auth login`
-3. Choose GitHub.com → HTTPS → Login with a web browser
-4. Complete authentication in the browser
-5. Confirm with `gh auth status`
+1. Run `gh auth login`
+2. Choose GitHub.com → HTTPS → Login with a web browser
+3. Complete authentication in the browser
+4. Confirm with `gh auth status`
 
 * * *
 
-## Slide 24 — Create Remote Repository
+## Slide 25 — Create Remote Repository
 
 **Label:** Publish
 **Title:** Create Remote Repository
@@ -334,7 +346,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 25 — Push to GitHub
+## Slide 26 — Push to GitHub
 
 **Label:** Publish
 **Title:** Push to GitHub
@@ -346,7 +358,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 26 — Enable GitHub Pages
+## Slide 27 — Enable GitHub Pages
 
 **Label:** Publish
 **Title:** Enable GitHub Pages
@@ -362,7 +374,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 27 — Resources
+## Slide 28 — Resources
 
 **Label:** Resources
 **Title:** Links & References
