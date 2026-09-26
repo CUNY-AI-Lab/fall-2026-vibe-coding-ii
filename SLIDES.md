@@ -195,9 +195,11 @@ Part 3 — Prototype + Publish (25m):
 **Stage (stageCompare):**
 
 - **macOS — Terminal:**
-  1. Download and run the installer from nodejs.org
-  2. Open a new Terminal window
-  3. Confirm with `node --version` and `git --version` (if macOS offers to install developer tools for Git, click Install)
+  1. Install Homebrew from brew.sh (skip if you already have it), then run the "Next steps" commands it prints: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+  2. Install Node.js: `brew install node`
+  3. Open a new Terminal window and confirm with `node --version` and `git --version`
+  - Muted note: Used `sudo` to install Pi last time? Tell us before you continue
+  - Presenter fix for anyone who did: `sudo chown -R $(whoami) ~/.npm ~/.pi` → `brew install node` → `npm install -g @earendil-works/pi-coding-agent`
 
 - **Windows — PowerShell:**
   1. Install Node.js and Git: `winget install OpenJS.NodeJS.LTS`, `winget install Git.Git`
@@ -212,12 +214,12 @@ Part 3 — Prototype + Publish (25m):
 **Title:** Install and Launch Pi
 
 **Stage (step-grid, fragments):**
-1. Run the workshop setup: `npx @cuny-ai-lab/cail-pi` (macOS) / `npx.cmd @cuny-ai-lab/cail-pi` (Windows)
+1. Run the workshop setup: `npx @cuny-ai-lab/cail-pi` (macOS) / `npx.cmd @cuny-ai-lab/cail-pi` (Windows).
 2. When LazyPi asks, choose **Install everything**. It takes a few minutes; warnings, a skipped package, and a note about `/login` are normal: ignore them and wait for the key prompt
 3. At `CUNY AI Lab API key:` paste your key (your typing stays hidden)
 4. Start Pi with `pi` (`pi.cmd` on Windows)
 5. Type `/model` and choose a CUNY AI Lab model
-- **?** Something off? Run the health check (`npx @cuny-ai-lab/cail-pi --doctor`, or `npx.cmd` on Windows), or just ask!
+- **?** Something off? Never use `sudo`. Run the health check (`npx @cuny-ai-lab/cail-pi --doctor`, or `npx.cmd` on Windows), or just ask!
 
 * * *
 
@@ -314,10 +316,9 @@ Part 3 — Prototype + Publish (25m):
 **Title:** Install GitHub CLI
 
 **Stage (step-grid, fragments):**
-1. macOS: install Homebrew from brew.sh, then run the "Next steps" commands it prints: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-2. macOS: `brew install gh`
-3. Windows: `winget install GitHub.cli`, then open a new PowerShell window
-4. Check that it worked: `gh --version`
+1. macOS: install the GitHub CLI with Homebrew: `brew install gh`
+2. Windows: `winget install GitHub.cli`, then open a new PowerShell window
+3. Check that it worked: `gh --version`
 
 * * *
 

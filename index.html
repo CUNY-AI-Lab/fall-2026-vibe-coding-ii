@@ -863,12 +863,14 @@
           <div class="col-tag">macOS</div>
           <div class="col-title">Terminal</div>
           <div class="col-sub">
-            1. Download and run the installer from <a href="https://nodejs.org/en/download" target="_blank" rel="noopener">nodejs.org</a><br>
-            2. Open a new Terminal window<br>
-            3. Confirm with:
+            1. Install <a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a> (skip if you already have it), then run the &ldquo;Next steps&rdquo; commands it prints:
+            <code class="code-block">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</code>
+            2. Install Node.js:
+            <code class="code-block">brew install node</code>
+            3. Open a new Terminal window and confirm:
             <code class="code-block">node --version
 git --version</code>
-            <span style="opacity:0.7;">If macOS offers to install developer tools for Git, click Install</span>
+            <span style="opacity:0.7;">Used <code>sudo</code> to install Pi last time? Tell us before you continue</span>
           </div>
         </div>
         <div class="col">
@@ -902,7 +904,7 @@ npx.cmd @cuny-ai-lab/cail-pi  # Windows</code></div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">At <code>CUNY AI Lab API key:</code> paste your key (your typing stays hidden)</div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">4</div><div class="step-text">Start Pi with <code>pi</code> (<code>pi.cmd</code> on Windows)</div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">5</div><div class="step-text">Type <code>/model</code> and choose a CUNY AI Lab model</div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true" style="background:var(--accent);">?</div><div class="step-text">Something off? Run the health check, or just ask!<code class="code-block">npx @cuny-ai-lab/cail-pi --doctor      # macOS
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true" style="background:var(--accent);">?</div><div class="step-text">Something off? Never use <code>sudo</code>. Run the health check, or just ask!<code class="code-block">npx @cuny-ai-lab/cail-pi --doctor      # macOS
 npx.cmd @cuny-ai-lab/cail-pi --doctor  # Windows</code></div></div>
       </div>
     </div>
@@ -1028,10 +1030,9 @@ assets/
     </div>
     <div class="stage">
       <div class="step-grid" role="list">
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text"><strong>macOS:</strong> install <a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a>, then run the &ldquo;Next steps&rdquo; commands it prints<code class="code-block">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</code></div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text"><strong>macOS:</strong> install the GitHub CLI<code class="code-block">brew install gh</code></div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text"><strong>Windows:</strong> install it, then open a new PowerShell window<code class="code-block">winget install GitHub.cli</code></div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">4</div><div class="step-text">Check that it worked:<code class="code-block">gh --version</code></div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text"><strong>macOS:</strong> install the GitHub CLI with Homebrew<code class="code-block">brew install gh</code></div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text"><strong>Windows:</strong> install it, then open a new PowerShell window<code class="code-block">winget install GitHub.cli</code></div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">Check that it worked:<code class="code-block">gh --version</code></div></div>
       </div>
     </div>
   </section>
