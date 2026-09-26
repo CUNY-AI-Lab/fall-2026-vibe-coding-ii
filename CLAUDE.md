@@ -19,7 +19,7 @@ A static slide deck for **Vibe Coding II: Building a Prototype** (CUNY AI Lab ·
 - **`index.html`** — Single-file slide deck. All slides are `<section class="slide">` elements inside `<main>`. All CSS is inlined in `<style>`. No external stylesheets.
 - **`src/slides.js`** — Slide engine: keyboard/touch/scrubber navigation, progressive fragment reveal (`.frag` class), overview mode (Escape key), hash-based routing. Also adds a copy button to every line of each `.code-block` (trailing `# macOS`-style notes are shown but not copied), so code blocks must stay plain text, one command per line.
 - **`src/chladni.html`** — Standalone canvas animation embedded as an iframe in the title slide.
-- **`src/prototype.zip`** — Downloadable starter files (messy focus-timer project) used in the workshop demo. Referenced by the "Planning Stage" slide.
+- **`src/cv-builder.js`** — Prompt builder for the "Design Your Site" slide (`#cv-builder`): dropdowns, section chips, and checkboxes assemble a one-line `/plan` prompt with a Copy button (reuses `copyText()` from `slides.js`, so it must load after it). The workshop exercise is a CV website: Pi imports the participant's CV into `cv-site/` and extracts `cv.txt` *before* `/plan`, because plan mode only allows read-only tools and shell commands, and Pi's `read` tool can't open PDFs (no LazyPi package reads local PDFs; `npx --yes pdf-parse text cv.pdf -o cv.txt` works cross-platform).
 - **`SLIDES.md`** — Plain-text mirror of slide content. Must stay in sync with `index.html` whenever slide text changes. Includes slide count in the last line.
 - **`img/`** — Logo and QR code assets referenced by the title slide.
 

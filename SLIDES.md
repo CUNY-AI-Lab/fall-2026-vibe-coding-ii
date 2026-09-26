@@ -33,13 +33,15 @@ Part 1 — Setup (25m):
 - Install and launch Pi
 
 Part 2 — Plan + Act (25m):
-- Planning stage
-- Acting stage
-- Verify the reorganized project
+- Set Up Your Project
+- Design Your Site
+- Planning & Acting
+- Open and Test Your Site
 - Create `AGENTS.md`
 
 Part 3 — Prototype + Publish (25m):
-- Customize the focus timer
+- Make It Yours
+- Install GitHub CLI
 - Authenticate with GitHub CLI
 - Create remote repository
 - Push to GitHub
@@ -230,22 +232,51 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 17 — Planning Stage
+## Slide 17 — Set Up Your Project
 
-**Label:** Demo
-**Title:** Planning Stage
-**Download:** `src/prototype.zip`
+**Label:** Build
+**Title:** Set Up Your Project
+**Subtitle:** A professional website, built from your CV
 
 **Stage (step-grid, fragments):**
-
-1. Download and unzip the starter files
-2. `cd` into the unzipped folder from your terminal
-3. Run `pi` (`pi.cmd` on Windows) to start the agent
-4. Use `/plan` so Pi investigates read-only and waits for your approval: `/plan Reorganize this directory`
+1. From your projects folder, make a folder for your site, go into it, and start Pi: `mkdir cv-site`, `cd cv-site`, `pi` (macOS) / `pi.cmd` (Windows)
+2. Let Pi bring in your CV and turn it into text it can read (copyable prompt): "Find my CV (a PDF or Word file, probably in my Downloads folder), copy it into this folder as cv.pdf or cv.docx, and save its text as cv.txt. For a PDF you can use: npx --yes pdf-parse text cv.pdf -o cv.txt" — muted: CV somewhere else? Tell Pi where it is
+3. Check that `cv.txt` looks like your CV — muted: No CV handy? Ask Pi to write a sample one for a fictional researcher
 
 * * *
 
-## Slide 18 — Acting Stage
+## Slide 18 — Design Your Site
+
+**Label:** Build
+**Title:** Design Your Site
+**Subtitle:** Pick your options, then copy the prompt into Pi
+
+**Stage (interactive prompt builder, `src/cv-builder.js`):**
+- **Layout:** Single scrolling page (default) · Sidebar profile · Minimal business card · Several pages
+- **Style:** Clean & minimal (default) · Academic & classic · Bold & modern · Warm & approachable · Creative & playful
+- **Colors** (with swatches): Ink & paper · Navy & gold (default) · Forest & cream · Terracotta & sand · Ocean & teal · Plum & blush · Let Pi choose
+- **Fonts:** Serif headings, sans body (default) · All sans-serif · All serif · Sans with monospace accents
+- **Light or dark:** Follow system, with a toggle (default) · Light · Dark
+- **Sections** (toggle chips): About, Education, Experience, Publications, Contact on by default; Research, Teaching, Projects, Skills, Awards off
+- **Checkboxes:** Hide my phone number and home address (on) · Add a "Download CV" button (off; when off, the prompt tells Pi to keep `cv.*` out of the repo with `.gitignore`)
+- **Output:** a one-line prompt starting with `/plan` that tells Pi to use only facts from `cv.txt`, build plain HTML/CSS/JS that works on GitHub Pages, and make it responsive and accessible, plus a **Copy prompt** button
+
+* * *
+
+## Slide 19 — Planning Stage
+
+**Label:** Demo
+**Title:** Planning Stage
+
+**Stage (step-grid, fragments):**
+1. Paste your prompt into Pi and press Enter
+2. It starts with `/plan`, so Pi only reads: it studies `cv.txt` and proposes a plan without changing any files
+3. Answer any questions Pi asks
+4. Read the plan. Wrong facts or a missing section? Tell Pi before you approve
+
+* * *
+
+## Slide 20 — Acting Stage
 
 **Label:** Demo
 **Title:** Acting Stage
@@ -255,62 +286,61 @@ Part 3 — Prototype + Publish (25m):
 - One possible result:
   - `index.html`
   - `css/style.css`
-  - `js/timer.js`
-  - `js/helpers.js`
-  - `js/app-init.js`
-  - `assets/icon.svg`
-  - `assets/config.json`
+  - `js/main.js`
+  - `.gitignore`
+  - `cv.pdf`
+  - `cv.txt`
 
 * * *
 
-## Slide 19 — Open and Test Project
+## Slide 21 — Open and Test Your Site
 
 **Label:** Demo
-**Title:** Open and Test Project
+**Title:** Open and Test Your Site
 
 **Stage (step-grid, fragments):**
-1. Check the file structure in Finder (macOS) or File Explorer (Windows): `css/`, `js/`, `assets/`
-2. Double-click `index.html` to open in the browser
-3. Try the focus timer. Does it start, pause, and reset?
+1. Ask Pi to open `index.html` in your browser
+2. Check every fact against your CV: names, titles, dates
+3. Make the window narrow. Does it still work at phone size?
 4. Check the console for errors (`Cmd+Option+J` / `Ctrl+Shift+J`)
-5. If something's broken, ask Pi to fix it before moving on
+5. Anything wrong? Tell Pi exactly what to fix
 
 * * *
 
-## Slide 20 — Create AGENTS.md
+## Slide 22 — Create AGENTS.md
 
 **Label:** Demo
 **Title:** Create `AGENTS.md`
 
 **Stage (stageCenter, fragments):**
-- **Big:** Ask the agent to capture what it learned during reorganization:
-- **Prompt:** "Create an AGENTS.md that documents this project: its purpose, file structure, and conventions."
-- Pi writes an `AGENTS.md` that documents the project for future agentic use. Pi loads it automatically whenever you start it in this folder.
+- **Big:** Ask the agent to write down what it knows about your site:
+- **Prompt:** "Create an AGENTS.md that documents this site: its purpose, file structure, design choices (layout, colors, fonts), and that all content must come from cv.txt."
+- Pi loads `AGENTS.md` automatically whenever you start it in this folder, so later sessions keep the same design and rules.
 
 * * *
 
-## Slide 21 — Section Break
+## Slide 23 — Section Break
 
 **Tag:** Part 3
 **Title:** Prototype + Publish
 
 * * *
 
-## Slide 22 — Customize the Focus Timer
+## Slide 24 — Make It Yours
 
-**Label:** Demo
-**Title:** Customize the Focus Timer
+**Label:** Build
+**Title:** Make It Yours
 
-**Stage (step-grid, fragments):**
-1. Prompt Pi to add a feature — e.g. session history, sound alerts, or custom intervals
-2. Keep changes in the right files: CSS in `css/`, JS in `js/`
-3. Test locally in the browser
-4. Revise one change at a time
-5. Keep the app simple enough to publish today
+**Stage (step-grid):**
+1. Ask Pi for one change at a time, e.g. add your photo, a Projects section, or links to your profiles
+2. Reload the page after each change and check it
+3. Pi can misread or embellish. Fix anything that isn't true
+4. Before publishing, ask Pi to check the site for anything you don't want public
+5. Keep it simple enough to publish today
 
 * * *
 
-## Slide 23 — Install GitHub CLI
+## Slide 25 — Install GitHub CLI
 
 **Label:** Publish
 **Title:** Install GitHub CLI
@@ -323,7 +353,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 24 — Authenticate with GitHub CLI
+## Slide 26 — Authenticate with GitHub CLI
 
 **Label:** Publish
 **Title:** Authenticate with GitHub CLI
@@ -336,7 +366,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 25 — Create Remote Repository
+## Slide 27 — Create Remote Repository
 
 **Label:** Publish
 **Title:** Create Remote Repository
@@ -348,7 +378,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 26 — Push to GitHub
+## Slide 28 — Push to GitHub
 
 **Label:** Publish
 **Title:** Push to GitHub
@@ -360,7 +390,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 27 — Enable GitHub Pages
+## Slide 29 — Enable GitHub Pages
 
 **Label:** Publish
 **Title:** Enable GitHub Pages
@@ -376,7 +406,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 28 — Resources
+## Slide 30 — Resources
 
 **Label:** Resources
 **Title:** Links & References
@@ -404,4 +434,4 @@ Tools & Docs:
 
 * * *
 
-_Last synced: 2026-09-22 (installer renamed to `@cuny-ai-lab/cail-pi`; credits trimmed to Stefano and Steve; API key & quota slide ported from Vibe Coding I, replacing the placeholder). Deck has 27 slides. Update both this file and `index.html` together._
+_Last synced: 2026-09-26 (focus-timer starter exercise replaced with a CV website: Pi imports the CV, an interactive prompt builder writes the /plan prompt, and Part 3 publishes the site). Deck has 30 slides. Update both this file and `index.html` together._
