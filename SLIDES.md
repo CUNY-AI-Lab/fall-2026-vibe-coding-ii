@@ -271,9 +271,9 @@ Part 3 — Prototype + Publish (25m):
 **Title:** Create Remote Repository
 
 **Stage (step-grid, fragments):**
-1. Initialize git locally: `git init`
-2. Create the repo on GitHub: `gh repo create REPO --public --source=.`
-3. Confirm the remote is set: `git remote -v`
+1. Ask Pi to set up the repository (copyable prompt): "Make this folder a git repository with main as the branch name, then create a public GitHub repository called cv-site for it with the gh CLI and connect the two."
+2. Watch what Pi runs: `git init`, then `gh repo create`
+3. Pi can do this because you logged in with `gh` on the last slide
 
 * * *
 
@@ -283,9 +283,9 @@ Part 3 — Prototype + Publish (25m):
 **Title:** Push to GitHub
 
 **Stage (step-grid, fragments):**
-1. `git add .`
-2. `git commit -m "first prototype"`
-3. `git push`
+1. Ask Pi to publish your files (copyable prompt): "List the files that will be published, then commit them and push to GitHub. If git doesn't know my name and email yet, set them from my GitHub account, using my GitHub noreply email."
+2. Check the list: no `cv.pdf` or `cv.txt`, unless you chose the "Download CV" button
+3. Ask Pi for the link and open your repository on GitHub
 
 * * *
 
@@ -296,12 +296,12 @@ Part 3 — Prototype + Publish (25m):
 
 **Stage (step-grid, fragments):**
 
-1. Go to `github.com/USERNAME/REPO`
+1. Go to `github.com/USERNAME/cv-site`
 2. Click the **Settings** tab
 3. Click **Pages** in the left sidebar
 4. Under **Source**, select **Deploy from a branch**
 5. Choose **main** → **/ (root)** and click **Save**
-6. Visit `USERNAME.github.io/REPO`
+6. Visit `USERNAME.github.io/cv-site`
 
 * * *
 
