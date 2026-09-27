@@ -22,17 +22,15 @@ Companion to `index.html`. Keep this file in sync whenever slide titles or text 
 
 **Stage (agenda table):**
 
-Part 0 — Review + Framing (15m):
-
+Part 0 — Review (5m):
 - Foundations Review
-- From Chatbots to Agents
 
 Part 1 — Setup (25m):
 - Your CUNY AI Lab API Key & Quota
 - Install Node.js & Git
 - Install and launch Pi
 
-Part 2 — Plan + Act (25m):
+Part 2 — Plan + Act (35m):
 - Set Up Your Project
 - Design Your Site
 - Planning & Acting
@@ -56,124 +54,25 @@ Part 3 — Prototype + Publish (25m):
 **Link:** [Vibe Coding I: Foundations deck](https://cuny-ai-lab.github.io/fall-2026-vibe-coding-i/#1)
 
 **Stage (step-grid, fragments):**
-1. How do **LLMs** generate code?
-   → Code is just another language pattern. The model predicts the next token based on syntax, structure, and problem-solving patterns learned from training data.
-2. What are the **four commands** we learned through the CLI?
-   → `pwd` print working directory · `cd` change directory · `cd ..` go up one level · `ls` list files
-3. What is **git** and what does it do?
-   → A version-control system that tracks every change so you can go back in time, undo mistakes, and work in parallel.
+1. What is **vibe coding**?
+   → Making software by describing what you want in natural language and iterating on what the system produces.
+2. What makes it a **coding agent**?
+   → A model working with context, tools, and a feedback loop: it chooses an action, a tool reads or edits files or runs a command, and the result comes back.
+3. What is **context**?
+   → What the model has in front of it when it makes its next decision: your request, the conversation, files and instructions it has read, and tool results.
+4. Which **commands** move you around, and what does **Git** do?
+   → `pwd` where you are · `ls` what's in the folder · `cd` into a folder · `cd ..` up one level. Git tracks every change to your files; GitHub stores them online.
 
 * * *
 
-## Slide 4 — Have You Used These?
-
-**Label:** Framing
-**Title:** Have you used these?
-**Subtitle:** ChatGPT, Claude, Copilot, Gemini
-
-**Stage (stageCenter):**
-- **Big:** You type something, it "types" back.
-
-* * *
-
-## Slide 5 — What's Happening
-
-**Label:** Framing
-**Title:** What's happening
-
-**Stage (step-grid, fragments):**
-1. It's predicting the **next word** over and over, very fast
-2. Trained on a lot of text, learned patterns
-3. **Fluent** but not "grounded"
-
-* * *
-
-## Slide 6 — Tools & Groundedness
-
-**Label:** Framing
-**Title:** Tools & Groundedness
-**Subtitle:** How models connect to the real world
-
-**Stage (step-grid, fragments):**
-1. Sometimes it **searches the web**
-2. Sometimes it **reads a file** you uploaded
-3. Sometimes it **runs code**
-4. A *tool* is a function it can call: "search this," "fetch that," "calculate this"
-
-* * *
-
-## Slide 7 — Agentic Means It Adapts
-
-**Label:** Framing
-**Title:** Agentic means it adapts
-
-**Stage (stageCompare):**
-- **Regular / One shot:** You ask → maybe one tool call → answer
-- **Agentic / It keeps going:** Look at the result → decide what to do next → call another tool → repeat until the task seems done
-
-* * *
-
-## Slide 8 — The Agentic Harness
-
-**Label:** Framing
-**Title:** The Agentic Harness
-**Subtitle:** The model doesn't run itself
-
-**Stage (step-grid, fragments):**
-1. Something has to run the loop: send a prompt → check if it wants a tool → run the tool → feed the result back → repeat
-2. Examples: **Claude Code**, **Cursor**, **Pi** (what we'll use today)
-3. That's what people mean when they say "agentic"
-
-* * *
-
-## Slide 9 — Example: One Tool Call
-
-**Label:** Example
-**Title:** One tool call
-**Stage (step-grid, fragments):**
-- **Prompt:** "What's the most recent article in CUNY Academic Works about open access?"
-1. Searches the repository → gets back a list
-2. Gives you a citation
-
-* * *
-
-## Slide 10 — Example: A Few Steps
-
-**Label:** Example
-**Title:** A few steps
-**Stage (step-grid, fragments):**
-- **Prompt:** "Find recent books on music theory we don't already own."
-1. Searches WorldCat → gets 25 results with ISBNs
-2. Filters to books where held_by_institution: false
-3. Searches Primo by ISBN to double-check holdings
-4. Fetches publisher websites to verify ISBNs
-5. Returns a list ready for ordering
-
-* * *
-
-## Slide 11 — Example: Try, Fail, Adjust
-
-**Label:** Example
-**Title:** Try, fail, adjust
-**Stage (step-grid, fragments):**
-- **Prompt:** "Check if these 20 ILL-requested titles are available in our catalog."
-1. Writes a Python script to query the API
-2. Runs it → 401 error, API key missing
-3. Reads the error, adds authentication
-4. Runs again → some return empty (searching by title instead of ISBN)
-5. Adjusts the query to use ISBN
-6. Runs again → full results → writes a CSV
-
-* * *
-
-## Slide 12 — Section Break
+## Slide 4 — Section Break
 
 **Tag:** Part 1
 **Title:** Setup
 
 * * *
 
-## Slide 13 — Your CUNY AI Lab API Key & Quota
+## Slide 5 — Your CUNY AI Lab API Key & Quota
 
 **Label:** Setup
 **Title:** Your CUNY AI Lab API Key & Quota
@@ -188,7 +87,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 14 — Install Node.js & Git
+## Slide 6 — Install Node.js & Git
 
 **Label:** Setup
 **Title:** Install Node.js & Git
@@ -210,7 +109,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 15 — Pi Setup
+## Slide 7 — Pi Setup
 
 **Label:** Setup
 **Title:** Install and Launch Pi
@@ -225,14 +124,14 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 16 — Section Break
+## Slide 8 — Section Break
 
 **Tag:** Part 2
 **Title:** Plan + Act
 
 * * *
 
-## Slide 17 — Set Up Your Project
+## Slide 9 — Set Up Your Project
 
 **Label:** Build
 **Title:** Set Up Your Project
@@ -245,7 +144,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 18 — Design Your Site
+## Slide 10 — Design Your Site
 
 **Label:** Build
 **Title:** Design Your Site
@@ -263,7 +162,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 19 — Planning Stage
+## Slide 11 — Planning Stage
 
 **Label:** Demo
 **Title:** Planning Stage
@@ -276,7 +175,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 20 — Acting Stage
+## Slide 12 — Acting Stage
 
 **Label:** Demo
 **Title:** Acting Stage
@@ -293,7 +192,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 21 — Open and Test Your Site
+## Slide 13 — Open and Test Your Site
 
 **Label:** Demo
 **Title:** Open and Test Your Site
@@ -307,7 +206,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 22 — Create AGENTS.md
+## Slide 14 — Create AGENTS.md
 
 **Label:** Demo
 **Title:** Create `AGENTS.md`
@@ -319,14 +218,14 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 23 — Section Break
+## Slide 15 — Section Break
 
 **Tag:** Part 3
 **Title:** Prototype + Publish
 
 * * *
 
-## Slide 24 — Make It Yours
+## Slide 16 — Make It Yours
 
 **Label:** Build
 **Title:** Make It Yours
@@ -340,7 +239,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 25 — Install GitHub CLI
+## Slide 17 — Install GitHub CLI
 
 **Label:** Publish
 **Title:** Install GitHub CLI
@@ -353,7 +252,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 26 — Authenticate with GitHub CLI
+## Slide 18 — Authenticate with GitHub CLI
 
 **Label:** Publish
 **Title:** Authenticate with GitHub CLI
@@ -366,7 +265,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 27 — Create Remote Repository
+## Slide 19 — Create Remote Repository
 
 **Label:** Publish
 **Title:** Create Remote Repository
@@ -378,7 +277,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 28 — Push to GitHub
+## Slide 20 — Push to GitHub
 
 **Label:** Publish
 **Title:** Push to GitHub
@@ -390,7 +289,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 29 — Enable GitHub Pages
+## Slide 21 — Enable GitHub Pages
 
 **Label:** Publish
 **Title:** Enable GitHub Pages
@@ -406,7 +305,7 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 30 — Resources
+## Slide 22 — Resources
 
 **Label:** Resources
 **Title:** Links & References
@@ -434,4 +333,4 @@ Tools & Docs:
 
 * * *
 
-_Last synced: 2026-09-26 (focus-timer starter exercise replaced with a CV website: Pi imports the CV, an interactive prompt builder writes the /plan prompt, and Part 3 publishes the site). Deck has 30 slides. Update both this file and `index.html` together._
+_Last synced: 2026-09-27 (Part 0 cut to one Foundations Review slide in Vibe Coding I's current terms; framing and example slides removed; the time moved to Part 2). Deck has 22 slides. Update both this file and `index.html` together._
