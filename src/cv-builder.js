@@ -1,6 +1,6 @@
 // Prompt builder for the "Design Your Site" slide: turns the chosen options
-// into a single-line /plan prompt that participants copy into Pi.
-// Kept on one line so it pastes cleanly as a /plan argument.
+// into a single-line planning prompt that participants copy into Pi.
+// Kept on one line so it pastes cleanly as one message.
 (() => {
   const form = document.getElementById('cv-builder');
   if (!form) return;
@@ -52,7 +52,7 @@
     const pick = key => PHRASES[key][field(key).value];
     const sections = chips.filter(c => c.getAttribute('aria-pressed') === 'true').map(c => c.textContent.trim());
     const parts = [
-      '/plan Build a professional personal website from my CV.',
+      'Plan a professional personal website built from my CV. Do not create or change any files until I approve the plan.',
       'The text of my CV is in cv.txt in this folder: use only facts from it and never invent details.',
       `Layout: ${pick('layout')}.`,
       `Style: ${pick('style')}.`,
@@ -70,6 +70,7 @@
       : 'Do not link to my CV files, and add cv.* to a .gitignore file so they are never published.');
     parts.push('Use plain HTML, CSS, and JavaScript (index.html plus css/ and js/ folders) with no build step, so it works when I open index.html and on GitHub Pages.');
     parts.push('Make it responsive for phones and accessible: semantic HTML, good color contrast, and keyboard-friendly navigation.');
+    parts.push('Read cv.txt, ask me any questions you have, then show me your plan.');
     return parts.join(' ');
   }
 

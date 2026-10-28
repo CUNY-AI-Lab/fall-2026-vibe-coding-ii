@@ -26,9 +26,9 @@ Part 0 — Review (5m):
 - Foundations Review
 
 Part 1 — Setup (25m):
-- Your CUNY AI Lab API Key & Quota
-- Install Node.js & Git
-- Install and launch Pi
+- Your CUNY AI Lab Access & Quota
+- Install Pi
+- Connect Pi to CUNY AI Lab
 
 Part 2 — Plan + Act (35m):
 - Set Up Your Project
@@ -72,55 +72,54 @@ Part 3 — Prototype + Publish (25m):
 
 * * *
 
-## Slide 5 — Your CUNY AI Lab API Key & Quota
+## Slide 5 — Your CUNY AI Lab Access & Quota
 
 **Label:** Setup
-**Title:** Your CUNY AI Lab API Key & Quota
+**Title:** Your CUNY AI Lab Access & Quota
 
 **Stage (key guide):**
-- **Gateway:** The CUNY AI Lab Gateway connects Pi to the models available through the Lab. Your personal key identifies your account and applies your quota.
+- **Gateway:** The CUNY AI Lab Gateway connects Pi to the models available through the Lab. You sign in to Pi with your CUNY account, which gives this computer a personal key tied to your quota.
 - Compact screenshot of the CUNY AI Lab Dashboard's key-creation form
-- **Lead:** Create a personal key in your CUNY AI Lab Dashboard. Copy it when it appears. You cannot reveal the complete key again.
-- **Keep it private:** Paste the key only into Pi's hidden prompt. Never put it in chat, GitHub, screenshots, or email.
-- **Your quota:** All your personal keys share one allowance. Creating another key does not add capacity. Check your current usage in the Dashboard.
-- **Guide:** https://ailab.gc.cuny.edu/docs/api-keys/
+- **Lead:** No key to copy: Pi saves it when you sign in. Prefer to paste a key? Create one in your CUNY AI Lab Dashboard and copy it when it appears. You cannot reveal the complete key again.
+- **Keep it private:** Paste a key only into Pi's sign-in prompt. Never put it in chat, GitHub, screenshots, or email.
+- **Your quota:** All your personal keys share one monthly allowance. Creating another key does not add capacity. Check your current usage in the Dashboard.
+- **Guide:** https://ailab.gc.cuny.edu/docs/cail-pi/
 
 * * *
 
-## Slide 6 — Install Node.js & Git
+## Slide 6 — Install Pi
 
 **Label:** Setup
-**Title:** Install Node.js & Git
-**Subtitle:** Pi's installer needs Node.js 22.19 or newer and Git
+**Title:** Install Pi
+**Subtitle:** Set up Pi before? Close Pi and run `pi update --all` instead
 
 **Stage (stageCompare):**
 
 - **macOS — Terminal:**
   1. No Homebrew yet? Install it from brew.sh, then run the "Next steps" commands it prints: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-  2. Install Node.js: `brew install node`
-  3. Open a new Terminal window and confirm with `node --version` and `git --version`
-  - Muted note: Used `sudo` for Pi last time? Tell us first
-  - Presenter fix for anyone who did: `sudo chown -R $(whoami) ~/.npm ~/.pi` → `brew install node` → `npm install -g @earendil-works/pi-coding-agent`
+  2. Install Pi with Pi's installer: `curl -fsSL https://pi.dev/install.sh | sh`
+  3. Press Enter to accept Pi's suggestions. At "Start pi now?" type `n`. Told your shell isn't using the new install yet? Open a new Terminal window
+  - Muted note: Permission error? Never use `sudo`. Raise your hand
 
 - **Windows — PowerShell:**
-  1. Install Node.js and Git: `winget install OpenJS.NodeJS.LTS`, `winget install Git.Git`
-  2. Close PowerShell and open a new window
-  3. Confirm with `node --version` and `git --version`
+  1. Install Git, then open a new PowerShell window: `winget install Git.Git`
+  2. Install Pi with Pi's installer: `irm https://pi.dev/install.ps1 | iex`
+  3. Press Enter to accept Pi's suggestions
+  - Muted note: PowerShell blocks `pi`? Type `pi.cmd` instead
 
 * * *
 
-## Slide 7 — Pi Setup
+## Slide 7 — Connect Pi to CUNY AI Lab
 
 **Label:** Setup
-**Title:** Install and Launch Pi
+**Title:** Connect Pi to CUNY AI Lab
 
 **Stage (step-grid, fragments):**
-1. Run the workshop setup: `npx @cuny-ai-lab/cail-pi` (macOS) / `npx.cmd @cuny-ai-lab/cail-pi` (Windows).
-2. When LazyPi asks, choose **Install everything**. Takes a few minutes. Warnings and a note about `/login` are normal: wait for the key prompt
-3. At `CUNY AI Lab API key:` paste your key (your typing stays hidden)
-4. Start Pi with `pi` (`pi.cmd` on Windows)
-5. Type `/model` and choose a CUNY AI Lab model
-- **?** Something off? Never use `sudo`. Run the health check (`npx @cuny-ai-lab/cail-pi --doctor`, or `npx.cmd` on Windows), or just ask!
+1. Add CUNY AI Lab to Pi: `pi install npm:@cuny-ai-lab/cail-pi`
+2. Start Pi: `pi`
+3. Type `/login cail` and choose **Sign in with CUNY AI Lab**. Sign in with CUNY Login in your browser, click **Connect Pi**, then come back to Pi — muted: Prefer a key? Choose **Sign in with an API key** and paste it
+4. A message ending in "no default model is configured" is normal. Send your first message: Pi answers with DeepSeek V4 Flash — muted: `/model` lists the other CUNY AI Lab models. Type `/quit` when you're done
+- **?** Something off? Type `/cail` inside Pi for a health check, or just ask!
 
 * * *
 
@@ -138,7 +137,7 @@ Part 3 — Prototype + Publish (25m):
 **Subtitle:** A professional website, built from your CV
 
 **Stage (step-grid, fragments):**
-1. From your projects folder, make a folder for your site, go into it, and start Pi: `mkdir cv-site`, `cd cv-site`, `pi` (macOS) / `pi.cmd` (Windows)
+1. From your projects folder, make a folder for your site, go into it, and start Pi: `mkdir cv-site`, `cd cv-site`, `pi`
 2. Let Pi bring in your CV and turn it into text it can read (copyable prompt): "Find my CV (a PDF or Word file, probably in my Downloads folder), copy it into this folder as cv.pdf or cv.docx, and save its text as cv.txt. For a PDF you can use: npx --yes pdf-parse text cv.pdf -o cv.txt" — muted: CV somewhere else? Tell Pi where it is
 3. Check that `cv.txt` looks like your CV — muted: No CV handy? Ask Pi to write a sample one for a fictional researcher
 
@@ -158,7 +157,7 @@ Part 3 — Prototype + Publish (25m):
 - **Light or dark:** Follow system, with a toggle (default) · Light · Dark
 - **Sections** (toggle chips): About, Education, Experience, Publications, Contact on by default; Research, Teaching, Projects, Skills, Awards off
 - **Checkboxes:** Hide my phone number and home address (on) · Add a "Download CV" button (off; when off, the prompt tells Pi to keep `cv.*` out of the repo with `.gitignore`)
-- **Output:** a one-line prompt starting with `/plan` that tells Pi to use only facts from `cv.txt`, build plain HTML/CSS/JS that works on GitHub Pages, and make it responsive and accessible, plus a **Copy prompt** button
+- **Output:** a one-line prompt that asks Pi to plan first and not create or change any files until approved, to use only facts from `cv.txt`, build plain HTML/CSS/JS that works on GitHub Pages, make it responsive and accessible, then read `cv.txt`, ask any questions and show the plan; plus a **Copy prompt** button
 
 * * *
 
@@ -169,7 +168,7 @@ Part 3 — Prototype + Publish (25m):
 
 **Stage (step-grid, fragments):**
 1. Paste your prompt into Pi and press Enter
-2. It starts with `/plan`, so Pi only reads: it studies `cv.txt` and proposes a plan without changing any files
+2. The prompt asks Pi to plan first: it studies `cv.txt` and proposes a plan without changing any files — muted: That's a request, not a lock. If Pi starts writing files, press Esc and remind it
 3. Answer any questions Pi asks
 4. Read the plan. Wrong facts or a missing section? Tell Pi before you approve
 
@@ -181,7 +180,7 @@ Part 3 — Prototype + Publish (25m):
 **Title:** Acting Stage
 
 **Stage (stageCenter, fragments):**
-- **Big:** Review the plan, then choose **Approve and execute now**, or **Continue from proposed plan** to adjust it first.
+- **Big:** Happy with the plan? Tell Pi **go ahead**. Want changes? Say what to change and ask for a revised plan first.
 - One possible result:
   - `index.html`
   - `css/style.css`
@@ -315,7 +314,7 @@ Part 3 — Prototype + Publish (25m):
 Next Steps:
 - [Vibe Coding III: Bring Your Own Project Clinic](https://cail-workshop-registration.ailab-452.workers.dev/) — Tuesday, October 13 · 2:30–4:00 pm · New Media Lab (Room 7388.01) · Prerequisite: Vibe Coding I & II
 - [Co-Working Sessions](https://ailab.gc.cuny.edu/events/) — Thursday, October 29 · Tuesday, November 17 · Thursday, December 3 · 2:00–4:00 pm
-- **Mind your quota** — Your API key has a limited quota. Keep an eye on it so you don't burn through it before the next session.
+- **Mind your quota** — Your Lab access comes with a monthly allowance. Keep an eye on it so you don't burn through it before the next session.
 - [Register](https://cail-workshop-registration.ailab-452.workers.dev/) — Sign up for upcoming CUNY AI Lab workshops and sessions
 
 CAIL:
@@ -326,11 +325,11 @@ CAIL:
 
 Tools & Docs:
 - [pi.dev](https://pi.dev) — Pi coding agent
-- [github.com/CUNY-AI-Lab/cail-pi](https://github.com/CUNY-AI-Lab/cail-pi) — CUNY AI Lab × Pi setup, `--doctor` health check, and troubleshooting
+- [ailab.gc.cuny.edu/docs/cail-pi](https://ailab.gc.cuny.edu/docs/cail-pi/) — CAIL Pi setup guide: install, CUNY sign-in, `/cail` health check, and troubleshooting
 - [cli.github.com](https://cli.github.com) — GitHub CLI
 - [docs.github.com](https://docs.github.com) — GitHub documentation
 - [agents.md](https://agents.md) — AGENTS.md specification
 
 * * *
 
-_Last synced: 2026-09-27 (Part 0 cut to one Foundations Review slide in Vibe Coding I's current terms; framing and example slides removed; the time moved to Part 2). Deck has 22 slides. Update both this file and `index.html` together._
+_Last synced: 2026-10-28 (Pi setup moved to CAIL Pi 0.4.0: Pi's own installer, `pi install npm:@cuny-ai-lab/cail-pi`, `/login cail` with CUNY sign-in, `/cail` health check; the `npx` installer, LazyPi and Node.js steps removed; the prompt builder asks Pi to plan first in place of LazyPi's `/plan`). Deck has 22 slides. Update both this file and `index.html` together._

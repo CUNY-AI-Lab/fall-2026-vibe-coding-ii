@@ -742,9 +742,9 @@
             <span class="agenda-section-title">Part 1 &mdash; Setup</span>
             <span class="agenda-section-time">25m</span>
           </div>
-          <a class="agenda-item" href="#5"><span class="agenda-item-label">Your CUNY AI Lab API Key &amp; Quota</span></a>
-          <a class="agenda-item" href="#6"><span class="agenda-item-label">Install Node.js &amp; Git</span></a>
-          <a class="agenda-item" href="#7"><span class="agenda-item-label">Install and Launch Pi</span></a>
+          <a class="agenda-item" href="#5"><span class="agenda-item-label">Your CUNY AI Lab Access &amp; Quota</span></a>
+          <a class="agenda-item" href="#6"><span class="agenda-item-label">Install Pi</span></a>
+          <a class="agenda-item" href="#7"><span class="agenda-item-label">Connect Pi to CUNY AI Lab</span></a>
         </div>
 
         <div class="agenda-section">
@@ -805,38 +805,38 @@
     </div>
   </section>
 
-  <!-- 5 · CUNY AI LAB API KEY & QUOTA -->
-  <section class="slide" data-slide="api-key" aria-label="Your CUNY AI Lab API Key and Quota">
+  <!-- 5 · CUNY AI LAB ACCESS & QUOTA -->
+  <section class="slide" data-slide="api-key" aria-label="Your CUNY AI Lab Access and Quota">
     <div class="content">
       <div class="label">Setup</div>
-      <h1>Your CUNY AI Lab API Key &amp; Quota</h1>
+      <h1>Your CUNY AI Lab Access &amp; Quota</h1>
     </div>
     <div class="stage">
       <div class="key-guide">
-        <p class="key-guide-gateway">The CUNY AI Lab Gateway connects Pi to the models available through the Lab. Your personal key identifies your account and applies your quota.</p>
+        <p class="key-guide-gateway">The CUNY AI Lab Gateway connects Pi to the models available through the Lab. You sign in to Pi with your CUNY account, which gives this computer a personal key tied to your quota.</p>
         <img class="key-guide-shot" src="img/cail-api-key-creation-mobile.jpg" alt="CUNY AI Lab Model access form with a key name field and Create key button">
-        <p class="key-guide-lead">Create a personal key in your CUNY AI Lab Dashboard. Copy it when it appears. You cannot reveal the complete key again.</p>
+        <p class="key-guide-lead">No key to copy: Pi saves it when you sign in. Prefer to paste a key? Create one in your CUNY AI Lab Dashboard and copy it when it appears. You cannot reveal the complete key again.</p>
         <div class="key-guide-details">
           <div>
             <h3>Keep it private</h3>
-            <p>Paste the key only into Pi&rsquo;s hidden prompt. Never put it in chat, GitHub, screenshots, or email.</p>
+            <p>Paste a key only into Pi&rsquo;s sign-in prompt. Never put it in chat, GitHub, screenshots, or email.</p>
           </div>
           <div>
             <h3>Your quota</h3>
-            <p>All your personal keys share one allowance. Creating another key does not add capacity. Check your current usage in the Dashboard.</p>
+            <p>All your personal keys share one monthly allowance. Creating another key does not add capacity. Check your current usage in the Dashboard.</p>
           </div>
         </div>
-        <a class="key-guide-link" href="https://ailab.gc.cuny.edu/docs/api-keys/" target="_blank" rel="noopener">ailab.gc.cuny.edu/docs/api-keys/</a>
+        <a class="key-guide-link" href="https://ailab.gc.cuny.edu/docs/cail-pi/" target="_blank" rel="noopener">ailab.gc.cuny.edu/docs/cail-pi/</a>
       </div>
     </div>
   </section>
 
-  <!-- 6 · INSTALL NODE.JS & GIT -->
-  <section class="slide" data-slide="node-setup" aria-label="Install Node.js and Git">
+  <!-- 6 · INSTALL PI -->
+  <section class="slide" data-slide="pi-install" aria-label="Install Pi">
     <div class="content">
       <div class="label">Setup</div>
-      <h1>Install Node.js &amp; Git</h1>
-      <h2>Pi&rsquo;s installer needs Node.js 22.19 or newer and Git</h2>
+      <h1>Install Pi</h1>
+      <h2>Set up Pi before? Close Pi and run <code style="font-size:0.8em;">pi update --all</code> instead</h2>
     </div>
     <div class="stage">
       <div class="stageCompare">
@@ -846,47 +846,41 @@
           <div class="col-sub">
             1. No <a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a> yet? Install it, then run the &ldquo;Next steps&rdquo; commands it prints:
             <code class="code-block">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</code>
-            2. Install Node.js:
-            <code class="code-block">brew install node</code>
-            3. Open a new Terminal window and confirm:
-            <code class="code-block">node --version
-git --version</code>
-            <span>Used <code>sudo</code> for Pi last time? Tell us first</span>
+            2. Install Pi with Pi&rsquo;s installer:
+            <code class="code-block">curl -fsSL https://pi.dev/install.sh | sh</code>
+            3. Press Enter to accept Pi&rsquo;s suggestions. At &ldquo;Start pi now?&rdquo; type <code>n</code>. Told your shell isn&rsquo;t using the new install yet? Open a new Terminal window<br>
+            <span style="color:rgba(255,255,255,0.7);">Permission error? Never use <code>sudo</code>. Raise your hand</span>
           </div>
         </div>
         <div class="col">
           <div class="col-tag">Windows</div>
           <div class="col-title">PowerShell</div>
           <div class="col-sub">
-            1. Install Node.js and Git:
-            <code class="code-block">winget install OpenJS.NodeJS.LTS
-winget install Git.Git</code>
-            2. Close PowerShell and open a new window<br>
-            3. Confirm with:
-            <code class="code-block">node --version
-git --version</code>
+            1. Install Git, then open a new PowerShell window:
+            <code class="code-block">winget install Git.Git</code>
+            2. Install Pi with Pi&rsquo;s installer:
+            <code class="code-block">irm https://pi.dev/install.ps1 | iex</code>
+            3. Press Enter to accept Pi&rsquo;s suggestions<br>
+            <span style="color:rgba(255,255,255,0.7);">PowerShell blocks <code>pi</code>? Type <code>pi.cmd</code> instead</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 7 · PI SETUP -->
-  <section class="slide" data-slide="pi-setup" aria-label="Install and Launch Pi">
+  <!-- 7 · CONNECT PI TO CUNY AI LAB -->
+  <section class="slide" data-slide="pi-setup" aria-label="Connect Pi to CUNY AI Lab">
     <div class="content">
       <div class="label">Setup</div>
-      <h1>Install and Launch Pi</h1>
+      <h1>Connect Pi to CUNY AI Lab</h1>
     </div>
     <div class="stage">
       <div class="step-grid" role="list">
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text">Run the workshop setup<code class="code-block">npx @cuny-ai-lab/cail-pi      # macOS
-npx.cmd @cuny-ai-lab/cail-pi  # Windows</code></div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text">When LazyPi asks, choose <strong>Install everything</strong><br><span>Takes a few minutes. Warnings and a note about <code>/login</code> are normal: wait for the key prompt</span></div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">At <code>CUNY AI Lab API key:</code> paste your key (your typing stays hidden)</div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">4</div><div class="step-text">Start Pi with <code>pi</code> (<code>pi.cmd</code> on Windows)</div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">5</div><div class="step-text">Type <code>/model</code> and choose a CUNY AI Lab model</div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true" style="background:var(--accent);">?</div><div class="step-text">Something off? Never use <code>sudo</code>. Run the health check, or just ask!<code class="code-block">npx @cuny-ai-lab/cail-pi --doctor      # macOS
-npx.cmd @cuny-ai-lab/cail-pi --doctor  # Windows</code></div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text">Add CUNY AI Lab to Pi<code class="code-block">pi install npm:@cuny-ai-lab/cail-pi</code></div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text">Start Pi<code class="code-block">pi</code></div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">Type <code>/login cail</code> and choose <strong>Sign in with CUNY AI Lab</strong>. Sign in with CUNY Login in your browser, click <strong>Connect Pi</strong>, then come back to Pi<br><span>Prefer a key? Choose <strong>Sign in with an API key</strong> and paste it</span></div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">4</div><div class="step-text">A message ending in &ldquo;no default model is configured&rdquo; is normal. Send your first message: Pi answers with DeepSeek V4 Flash<br><span><code>/model</code> lists the other CUNY AI Lab models. Type <code>/quit</code> when you&rsquo;re done</span></div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true" style="background:var(--accent);">?</div><div class="step-text">Something off? Type <code>/cail</code> inside Pi for a health check, or just ask!</div></div>
       </div>
     </div>
   </section>
@@ -910,8 +904,7 @@ npx.cmd @cuny-ai-lab/cail-pi --doctor  # Windows</code></div></div>
       <div class="step-grid" role="list">
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text">From your projects folder, make a folder for your site, go into it, and start Pi:<code class="code-block">mkdir cv-site
 cd cv-site
-pi          # macOS
-pi.cmd      # Windows</code></div></div>
+pi</code></div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text">Let Pi bring in your CV and turn it into text it can read:<code class="code-block code-prose">Find my CV (a PDF or Word file, probably in my Downloads folder), copy it into this folder as cv.pdf or cv.docx, and save its text as cv.txt. For a PDF you can use: npx --yes pdf-parse text cv.pdf -o cv.txt</code><span>CV somewhere else? Tell Pi where it is</span></div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">Check that <code>cv.txt</code> looks like your CV<br><span>No CV handy? Ask Pi to write a sample one for a fictional researcher</span></div></div>
       </div>
@@ -1012,7 +1005,7 @@ pi.cmd      # Windows</code></div></div>
     <div class="stage">
       <div class="step-grid" role="list">
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">1</div><div class="step-text">Paste your prompt into Pi and press Enter</div></div>
-        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text">It starts with <code>/plan</code>, so Pi only reads: it studies <code>cv.txt</code> and proposes a plan without changing any files</div></div>
+        <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">2</div><div class="step-text">The prompt asks Pi to plan first: it studies <code>cv.txt</code> and proposes a plan without changing any files<br><span>That&rsquo;s a request, not a lock. If Pi starts writing files, press Esc and remind it</span></div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">3</div><div class="step-text">Answer any questions Pi asks</div></div>
         <div class="step-row frag" role="listitem"><div class="step-num" aria-hidden="true">4</div><div class="step-text">Read the plan. Wrong facts or a missing section? Tell Pi before you approve</div></div>
       </div>
@@ -1028,7 +1021,7 @@ pi.cmd      # Windows</code></div></div>
     <div class="stage">
       <div class="stageCenter">
         <div class="stageInner">
-          <div class="stageBig">Review the plan, then choose <strong>Approve and execute now</strong>, or <strong>Continue from proposed plan</strong> to adjust it first.</div>
+          <div class="stageBig">Happy with the plan? Tell Pi <strong>go ahead</strong>. Want changes? Say what to change and ask for a revised plan first.</div>
           <div class="stageHint frag">One possible result:</div>
           <div class="dir-tree frag">
 <span class="hl">index.html</span>
@@ -1207,7 +1200,7 @@ cv.txt
             </li>
             <li>
               <span style="font-size:clamp(15px,1.7vw,20px); color:var(--fg);">Mind your quota</span>
-              <div class="res-desc">Your API key has a limited quota. Keep an eye on it so you don&rsquo;t burn through it before the next session.</div>
+              <div class="res-desc">Your Lab access comes with a monthly allowance. Keep an eye on it so you don&rsquo;t burn through it before the next session.</div>
             </li>
             <li>
               <a href="https://cail-workshop-registration.ailab-452.workers.dev/" target="_blank" rel="noopener">Register</a>
@@ -1250,8 +1243,8 @@ cv.txt
               <div class="res-desc">Pi coding agent</div>
             </li>
             <li>
-              <a href="https://github.com/CUNY-AI-Lab/cail-pi" target="_blank" rel="noopener">github.com/CUNY-AI-Lab/cail-pi</a>
-              <div class="res-desc">CUNY AI Lab × Pi setup, <code>--doctor</code> health check, and troubleshooting</div>
+              <a href="https://ailab.gc.cuny.edu/docs/cail-pi/" target="_blank" rel="noopener">ailab.gc.cuny.edu/docs/cail-pi</a>
+              <div class="res-desc">CAIL Pi setup guide: install, CUNY sign-in, <code>/cail</code> health check, and troubleshooting</div>
             </li>
             <li>
               <a href="https://cli.github.com" target="_blank" rel="noopener">cli.github.com</a>
